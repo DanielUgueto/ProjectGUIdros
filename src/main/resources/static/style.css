@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: #fff;
+}
+
+/* Volunteer section */
+.volunteer {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #E56B70;
+}
+
+.volunteer-text {
+    flex: 1 1 400px;
+    padding: 50px 40px;
+}
+
+.volunteer-text h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.volunteer-text p {
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.volunteer-text button {
+    background-color: #fff;
+    color: #E56B70;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.volunteer-text button:hover {
+    background-color: #f5f5f5;
+}
+
+.volunteer-image {
+    flex: 1 1 400px;
+}
+
+.volunteer-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* How It Works section */
+.how-it-works {
+    background-color: #2C4951;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.how-it-works h2 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.how-it-works p {
+    color: #cfd8dc;
+    margin-bottom: 40px;
+}
+
+.steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.step {
+    background-color: #345C64;
+    border-radius: 12px;
+    padding: 25px;
+    width: 280px;
+    text-align: center;
+}
+
+.step .number {
+    display: inline-block;
+    background-color: #22373D;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.step h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.step p {
+    color: #cfd8dc;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
