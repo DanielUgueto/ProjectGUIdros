@@ -1,0 +1,181 @@
+
+
+/* Base Styles */
+.navbar {
+    background-color: #1b4a52; /* Main dark background */
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    /* ... other list styles ... */
+}
+
+.navbar li {
+    flex: 1;
+    display: flex; /* Makes the content inside li flexible */
+    flex-direction: column; /* Stacks the content (color block and link) vertically */
+    text-align: center;
+}
+
+/* 1. The Top Color Block Row */
+.color-block {
+    height: 20px; /* Adjust height to match image's top block */
+}
+
+.forside .color-block { background-color: #f4cbb3; }
+.modtager .color-block { background-color: #526c47; }
+.frivillig .color-block { background-color: #c94b54; }
+.restaurant .color-block { background-color: #2a5860; }
+.doner .color-block { background-color: #707a3a; }
+
+
+/* 2. The Bottom Link Row */
+.navbar a {
+    /* The link needs its own distinct background color */
+    background-color: #1b4a52;
+    display: block;
+    padding: 15px 0;
+    text-decoration: none;
+    color: #f2f2f2;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    /* Remove the conflicting border properties from your original CSS */
+    border-right: none;
+    border-left: none;
+
+    /* Underline/Highlight Effect: Use a box-shadow or border-bottom */
+    /* I'll use border-bottom to simulate the line under the active/default link */
+    border-bottom: 3px solid transparent; /* default state */
+    transition: background 0.3s ease, border-bottom 0.3s ease;
+}
+
+/* Specific styling for the first element (FORSIDE) to match the image */
+/* It has a lighter background and a dark underline */
+.forside {
+    /* Set the background for the entire list item for the bottom section */
+
+}
+
+.forside a {
+    color: #f2f2f2; /* Dark text on light background */
+    background-color: transparent; /* Inherit the list item's background */
+    border-bottom-color: #1b4a52; /* Dark underline for the active link */
+}
+
+
+/* Separator Lines (the vertical bars) - using :after or a border */
+.navbar li:not(:last-child) {
+    border-right: 1px solid rgba(255, 255, 255, 0.4); /* Light separator line */
+}
+
+/* Hover effect */
+.navbar a:hover {
+    /* Example: Darker background on hover for the non-forside links */
+    background-color: #12343a;
+    border-bottom-color: #f2f2f2; /* Light underline on hover */
+}
+
+/* --- Footer Styling --- */
+
+.site-footer {
+    background-color: #1b4a52; /* Den mørke baggrundsfarve */
+    color: #f2f2f2; /* Lys tekstfarve */
+    padding: 50px 0 0; /* Større padding i toppen, mindre i bunden */
+}
+
+.footer-container {
+    max-width: 1200px; /* Centrerer indholdet som din navbar */
+    margin: 0 auto;
+    padding: 0 20px 50px; /* Sørger for padding i siderne og bunden */
+    display: grid;
+    /* Definerer 4 kolonner, de to midterste er smallere end de yderste */
+    grid-template-columns: 2fr 1.5fr 1.5fr 2fr;
+    gap: 40px; /* Mellemrum mellem kolonnerne */
+}
+
+/* Kolonne Headers */
+.site-footer h3 {
+    color: #f2f2f2;
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    font-weight: bold; /* Sørger for at overskriften er fed */
+}
+
+/* Afsnitstekst */
+.footer-about p,
+.footer-contact p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 8px; /* Lidt plads mellem kontaktlinjerne */
+}
+
+
+/* Quick Links (Bliv aktiv) */
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links a {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: block; /* Gør links til blok-elementer for at give dem plads */
+    padding: 4px 0;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #a8a8a8; /* Lidt lysere farve ved hover */
+    text-decoration: underline;
+}
+
+/* Social Media Icons (Følg os) */
+.social-icons {
+    display: flex;
+    gap: 15px; /* Mellemrum mellem ikonerne */
+}
+
+.social-icons a {
+    color: #f2f2f2;
+    font-size: 1.7rem; /* Stor størrelse som i billedet */
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #d1d1d1;
+}
+
+/* Kontakt links */
+.footer-contact a {
+    color: #f2f2f2;
+    text-decoration: none;
+    transition: text-decoration 0.3s;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+/* Den mørke bundlinje (under footeren) */
+.footer-bottom-bar {
+    height: 10px; /* Tykkelsen på den mørke stribe */
+    background-color: #222; /* En meget mørk grå/sort farve */
+    width: 100%;
+}
+
+/* Responsivitet for mindre skærme */
+@media (max-width: 768px) {
+    .footer-container {
+        /* Skifter til en enkelt kolonne på små skærme */
+        grid-template-columns: 1fr;
+        padding: 0 40px 40px; /* Mere padding på siderne for at give luft */
+    }
+
+    .footer-column {
+        margin-bottom: 30px; /* Plads mellem sektionerne, når de er stablet */
+    }
+}
+
+

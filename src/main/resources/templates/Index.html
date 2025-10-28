@@ -7,6 +7,7 @@
 </head>
 
 <body>
+<div th:replace="fragments/header :: site-header"></div>
 
 //section a olga
 <div>
@@ -64,15 +65,16 @@
     </div>
 </section>
 
-    //section e rass
-    <div>
+//section e rass
+<div>
 
-    </div>
+</div>
 
 
-    <footer>
 
-    </footer>
+<footer>
+    <div th:insert="~{fragments/footer :: site-footer}"></div>
+</footer>
 
 </body>
 </html>

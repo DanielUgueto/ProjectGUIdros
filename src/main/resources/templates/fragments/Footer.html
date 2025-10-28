@@ -1,0 +1,38 @@
+<footer th:fragment="site-footer" class="site-footer">
+    <div class="footer-container">
+        <div class="footer-column footer-about">
+            <h3>FoodBoks</h3>
+            <p>Vi forbinder restauranter med mennesker, der har brug for et måltid, og giver overskydende mad nyt liv. Sammen stopper vi madspild - ét måltid ad gangen.</p>
+        </div>
+
+        <div class="footer-column footer-links">
+            <h3>Bliv aktiv</h3>
+            <ul>
+                <li><a href="#" th:href="@{/restauranter}">For restauranter</a></li>
+                <li><a href="#" th:href="@{/madmodtagere}">For madmodtagere</a></li>
+                <li><a href="#" th:href="@{/frivillig}">Bliv frivillig</a></li>
+                <li><a href="#" th:href="@{/fonde}">For fonde</a></li>
+                <li><a href="#" th:href="@{/om-os}">Om os</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column footer-social">
+            <h3>Følg os</h3>
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-column footer-contact">
+            <h3>Kontakt os</h3>
+            <p>København, Danmark</p>
+            <p><a href="mailto:kontakt@foodboks.dk">kontakt@foodboks.dk</a></p>
+            <p>+45 12 34 56 78</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom-bar"></div>
+</footer>
