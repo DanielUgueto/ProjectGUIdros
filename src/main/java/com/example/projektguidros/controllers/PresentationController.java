@@ -23,4 +23,9 @@ public class PresentationController {
         return "index";
     }
 
+        @GetMapping({"/om-os"})
+        public String showAbout() {
+            return "om-os";
+        }
+
 }
