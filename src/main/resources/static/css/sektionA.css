@@ -1,0 +1,99 @@
+.container{
+    width: clamp(960px, 85vw, 1800px); /*min, foretrukken, max*/
+    margin: 0 auto;
+    padding-inline: 24px;
+    box-sizing: border-box;
+}
+
+/* ----- HERO SEKTION ----- */
+.heroBillede {
+    width: 100vw; /*fylder 100% af skærmens bredde*/
+
+    /* Hero billede */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+
+    /*Placering af tekst med flexbox */
+    display: flex;
+    align-items: flex-end; /*Tekst placeret nederst i sektion*/
+    padding: min(5vw, 3rem); /*padding, som er responsiv, med min/max værdi, mindst 5vW(5% viewport width), og ellers max 3 rem = omkring 3 x 16 px)*/
+}
+
+/* HERO-TEKST */
+.heroTekst h1 {
+    color: rgba(255, 246, 241, 0.85); /* #FFF6F1 med 85% gennemsigtighed */
+
+    /* Dynamisk fontstørrelse — vokser og skrumper automatisk */
+    font-size: clamp(3rem, 10vw, 10rem);
+    /*en dynamisk font størrelse, med brug af clamp(min, foretrukket, max) værdier,
+    så den er responsiv med skærmen.*/
+
+    line-height: 1;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* ----------------- ET MÅLTID KAN GØRE EN FORSKEL -----------------  */
+/* hele sektionen */
+.etMaaltid {
+    background: #0C4857; /*baggrundsfarve*/
+    color: #FFF6F1; /*tekstfarve*/
+    display: flex; /*to kolonner side om side*/
+    align-items: center;
+    justify-content: space-between; /*venstre og højre skubbes fra hinanden*/
+    gap: 2rem; /*afstand mellem kolonner*/
+    padding: 2rem 7vw; /* lodret luft + sidespacing i vw */
+    box-sizing: border-box;
+}
+
+/* VENSTRE M KNAPPER */
+.etMaaltidVenstre {
+    display: flex;
+    flex-direction: column; /*knapper under hinanden*/
+    gap: 1.25rem;
+    flex: 0 0 40% /*bruger 40% af bredden */
+}
+
+/* HØJRE M TEKST */
+.etMaaltidHoejre {
+    flex: 1 1 50%;/*fylder resten af pladsen*/
+    text-align: right;
+}
+
+/* OVERSKRIFT H2 */
+.etMaaltidHoejre h2 {
+    margin: 0 0 1.5rem 0; /*top, right, bottom, left*/
+    font-size: clamp(1.6rem, 4vw, 3rem); /*min, foretrukken, max*/
+    font-weight: 800;
+    line-height: 1.02;
+}
+
+/* UNDERTEKST p */
+.etMaaltidHoejre p {
+    margin: 0;
+    line-height: 1.25;
+    font-size: clamp(1rem, 1.6vw, 2rem); /* min, foretrukken (flydende), max */
+}
+
+/* SVG knapper*/
+.MaaltidKnap {
+    height: 50px;
+    width: auto;
+    max-width: 480px;
+
+    display: block;
+    cursor: pointer;
+
+    transition: transform .15s ease, filter .15s ease; /* hover animaiton, bliver bestemt her hvordan */
+
+    flex-shrink: 0; /* Forhindrer at flex-containeren klemmer/strækker knappen */
+    align-self: flex-start; /* holder knapperne øverst/venstre i kolonnen */
+}
+
+.knap:hover { /* hover effekt*/
+    transform: translateY(-2px);
+    filter: brightness(1.04);
+}
