@@ -14,7 +14,9 @@
 <div th:replace="fragments/header :: site-header"></div>
 
 
-<!-- ----- HERO SEKTION ----- -->
+<!-- ============================ SEKTION A - Olga ============================ -->
+
+<!-- ---------- 1. HERO SEKTION ---------- -->
 <section class="heroBillede" th:style="|background-image: url('@{/images/heroSection_billede.jpg}');|">
     <div class="container heroInner">
         <div class="heroTekst">
@@ -27,30 +29,77 @@
     </div>
 </section>
 
-<!-- ----- ET MÅLTID KAN GØRE EN FORSKEL (navngives etMaaltid) ----- -->
+
+<!-- ---------- 2. ET MÅLTID KAN GØRE EN FORSKEL ---------- -->
 <section class="etMaaltid">
+    <div class="etMaaltidIndhold">
+        <div class="etMaaltidVenstre">
+            <a href="/restaurant"><img src="/images/icons/SekA_TilmeldDinRestaurant.svg" alt="Tilmeld" class="MaaltidKnap"></a>
+            <a href="/laes-mere"><img src="/images/icons/SekA_LæsMere.svg" alt="Læs mere" class="MaaltidKnap"></a>
+        </div>
 
-    <!-- div til venstre -->
-    <div class="etMaaltidVenstre">
-        <!-- knapper -->
-        <a href="/restaurant"><img src="/images/icons/SekA_TilmeldDinRestaurant.svg" alt="Tilmeld" class="MaaltidKnap"></a>
-        <a href="/laes-mere"><img src="/images/icons/SekA_LæsMere.svg" alt="Læs mere" class="MaaltidKnap"></a>
-    </div>
-
-    <!-- div til højre -->
-    <div class="etMaaltidHoejre">
-        <h2>Et måltid kan gøre en forskel</h2>
-        <p>- for både mennesker og planeten.</p>
+        <div class="etMaaltidHoejre">
+            <h2>Et måltid kan gøre en forskel</h2>
+            <p>- for både mennesker og planeten.</p>
+        </div>
     </div>
 </section>
 
 
+<!-- ---------- 3. LYS INFO TEKST SEKTION ---------- -->
+<section class="lysSektion">
+    <div class="lysIndhold">
+        <div class="lysGrid">
+            <p>
+                Sammen kan vi skabe et værdigt og bæredygtigt madfællesskab, hvor overskud bliver delt i stedet for smidt ud.
+            </p>
+
+            <p class="divider">
+                Vi hjælper restauranter med at give deres overskydende mad videre til mennesker, der har brug for et måltid.
+            </p>
+        </div>
+    </div>
+</section>
 
 
-//section b olga
-<div>
+<!-- ============================ SEKTION B - Olga ============================-->
 
-</div>
+<!-- ---------- 4. HAR DU BRUG FOR ET MÅLTID ---------- -->
+<section class="madModtager">
+    <div class="madModtagerIndhold">
+
+        <div class="madModtagerVenstre">
+            <img src="/images/modtager_billede.jpg" alt="FoodBoks modtager" class="madModtagerBillede">
+        </div>
+
+        <div class="madModtagerHoejre">
+            <h2>Har du brug for et måltid?</h2>
+            <p>
+                Gennem vores app kan du finde overskydende mad fra restauranter i nærheden, som ellers ville være gået til spilde.<br>
+                Det er gratis, trygt og helt anonymt – du bestemmer selv, hvornår du henter din mad.<br>
+                Et enkelt måltid kan gøre hverdagen lidt lettere. Vi sørger for, at det er muligt.<br>
+            </p>
+
+            <a href="/find-et-maltid">
+                <img src="/images/icons/SekB_FindEtMåltidNærDig.svg" alt="Find et måltid nær dig" class="madModtagerKnap">
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- ---------- 5. BÆRDYGTIGHED, FÆLLESSKAB og VÆRDIGHED ---------- -->
+<section class="principperSektion">
+    <div class="principperIndhold">
+        <img src="/images/icons/SekB_Baeredygtighed.svg" alt="Bæredygtighed" class="principIkon">
+        <img src="/images/icons/SekB_Faellesskab.svg" alt="Fællesskab" class="principIkon">
+        <img src="/images/icons/SekB_Vaerdighed.svg" alt="Værdighed" class="principIkon">
+    </div>
+</section>
+
+<!-- ========= SEKTION B SLUT =========-->
+
+
 
 //section c daniel
 <section>

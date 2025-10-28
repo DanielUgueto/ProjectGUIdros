@@ -5,9 +5,9 @@
     box-sizing: border-box;
 }
 
-/* ----- HERO SEKTION ----- */
+/* ---------------------- HERO SEKTION ---------------------- */
 .heroBillede {
-    width: 100vw; /*fylder 100% af skærmens bredde*/
+    width: 100%; /*fylder 100% af skærmens bredde*/
 
     /* Hero billede */
     background-size: cover;
@@ -18,14 +18,13 @@
     /*Placering af tekst med flexbox */
     display: flex;
     align-items: flex-end; /*Tekst placeret nederst i sektion*/
-    padding: min(5vw, 3rem); /*padding, som er responsiv, med min/max værdi, mindst 5vW(5% viewport width), og ellers max 3 rem = omkring 3 x 16 px)*/
+    padding: min(5vw, 3rem); /*padding, som er responsiv, med min/max værdi, mindst 5vw(5% viewport width), og ellers max 3 rem = omkring 3 x 16 px)*/
 }
 
 /* HERO-TEKST */
 .heroTekst h1 {
     color: rgba(255, 246, 241, 0.85); /* #FFF6F1 med 85% gennemsigtighed */
 
-    /* Dynamisk fontstørrelse — vokser og skrumper automatisk */
     font-size: clamp(3rem, 10vw, 10rem);
     /*en dynamisk font størrelse, med brug af clamp(min, foretrukket, max) værdier,
     så den er responsiv med skærmen.*/
@@ -36,64 +35,201 @@
     margin: 0;
 }
 
-/* ----------------- ET MÅLTID KAN GØRE EN FORSKEL -----------------  */
-/* hele sektionen */
-.etMaaltid {
-    background: #0C4857; /*baggrundsfarve*/
-    color: #FFF6F1; /*tekstfarve*/
-    display: flex; /*to kolonner side om side*/
-    align-items: center;
-    justify-content: space-between; /*venstre og højre skubbes fra hinanden*/
-    gap: 2rem; /*afstand mellem kolonner*/
-    padding: 2rem 7vw; /* lodret luft + sidespacing i vw */
+/* ----- Fælles container-stil ----- */
+.etMaaltidIndhold,
+.lysIndhold {
+    width: clamp(960px, 85vw, 1800px);
+    margin: 0 auto;
+    padding-inline: 24px; /* samme margin i siderne */
     box-sizing: border-box;
 }
 
-/* VENSTRE M KNAPPER */
-.etMaaltidVenstre {
-    display: flex;
-    flex-direction: column; /*knapper under hinanden*/
-    gap: 1.25rem;
-    flex: 0 0 40% /*bruger 40% af bredden */
+/* ---------------------- ET MÅLTID ---------------------- */
+.etMaaltid {
+    background: #0C4857;
+    color: #FFF6F1;
+    padding-block: 3rem;
 }
 
-/* HØJRE M TEKST */
+.etMaaltidIndhold {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.etMaaltidVenstre {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    flex: 0 0 40%;
+}
+
 .etMaaltidHoejre {
-    flex: 1 1 50%;/*fylder resten af pladsen*/
+    flex: 1 1 50%;
     text-align: right;
 }
 
-/* OVERSKRIFT H2 */
 .etMaaltidHoejre h2 {
-    margin: 0 0 1.5rem 0; /*top, right, bottom, left*/
-    font-size: clamp(1.6rem, 4vw, 3rem); /*min, foretrukken, max*/
+    margin: 0 0 1.5rem 0;
+    font-size: clamp(1.6rem, 4vw, 3rem);
     font-weight: 800;
     line-height: 1.02;
 }
 
-/* UNDERTEKST p */
 .etMaaltidHoejre p {
     margin: 0;
+    font-size: clamp(1rem, 1.8vw, 2rem);
     line-height: 1.25;
-    font-size: clamp(1rem, 1.6vw, 2rem); /* min, foretrukken (flydende), max */
 }
 
-/* SVG knapper*/
 .MaaltidKnap {
     height: 50px;
     width: auto;
     max-width: 480px;
-
     display: block;
     cursor: pointer;
-
-    transition: transform .15s ease, filter .15s ease; /* hover animaiton, bliver bestemt her hvordan */
-
-    flex-shrink: 0; /* Forhindrer at flex-containeren klemmer/strækker knappen */
-    align-self: flex-start; /* holder knapperne øverst/venstre i kolonnen */
+    transition: transform .15s ease, filter .15s ease;
 }
 
-.knap:hover { /* hover effekt*/
-    transform: translateY(-2px);
+.MaaltidKnap:hover {
+    transform: translateY(-2px) scale(1.03);
     filter: brightness(1.04);
+    ;
 }
+
+/* ---------------------- LYS SEKTION ---------------------- */
+.lysSektion {
+    background: #FFCAB1;
+    color: #0C4857;
+    padding-block: 3rem;
+}
+
+.lysGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.lysGrid p {
+    margin: 0;
+    font-size: clamp(1rem, 1.6vw, 1.4rem);
+    line-height: 1.6;
+    max-width: 65ch;
+}
+
+.divider {
+    border-left: 2px solid rgba(12, 72, 87, 0.4);
+    padding-left: 3rem;
+}
+
+
+/* ---------------------- HAR DU BRUG FOR ET MÅLTID ---------------------- */
+.madModtager {
+    background: #5C8150;
+    color: #FFF6F1;
+}
+
+/* Grid layout */
+.madModtagerIndhold {
+    display: grid;
+    grid-template-columns: 0.6fr 1.4fr;
+    align-items: center;
+}
+
+/* Venstre: billede */
+.madModtagerVenstre {
+    align-self: stretch;
+}
+
+.madModtagerBillede {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Højre: tekst og knap */
+.madModtagerHoejre {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    padding: clamp(3rem, 6vw, 8rem);
+}
+
+/* Overskrift */
+.madModtagerHoejre h2 {
+    margin: 0 0 2rem 0;
+    font-size: clamp(2.4rem, 4.2vw, 3.6rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #FFF6F1;
+}
+
+/* Brødtekst */
+.madModtagerHoejre p {
+    margin: 0 0 3.5rem 0;
+    line-height: 1.6;
+    font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+    max-width: 60ch;
+    color: #FFF6F1;
+}
+
+/* Centrer knappen horisontalt */
+.madModtagerHoejre a {
+    align-self: center;
+}
+
+/* SVG-knap */
+.madModtagerKnap {
+    height: 120px;
+    width: auto;
+    display: block;
+    cursor: pointer;
+    transition: transform .15s ease, filter .15s ease;
+}
+
+.madModtagerKnap:hover {
+    transform: translateY(-3px) scale(1.04);
+    filter: brightness(1.08);
+}
+
+
+
+/* ---------------------- PRINCIPPER-SEKTION ---------------------- */
+.principperSektion {
+    background: #FFCAB1;
+    padding-block: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.principperIndhold {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    width: clamp(960px, 70vw, 1800px);
+    margin: 0 auto;
+    align-items: stretch;
+    box-sizing: border-box;
+}
+
+/* SVG-bokse */
+.principIkon {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+/* Lille hover på ikonerne */
+.principIkon:hover {
+    transform: translateY(-5px);
+    filter: brightness(1.05);
+}
+
+
+
