@@ -3,20 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="${presentation.title}">'idk'</title>
-    <link rel="stylesheet" th:href="@{/style.css}">
-    <link th:href="@{/css/style.frontPage.sectionE.css}" rel="stylesheet">
-    <link th:href="@{/css/style.css}" rel="stylesheet">
 
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/frontPage/style.frontPage.sectionE.css}">
+    <link rel="stylesheet" th:href="@{/css/sektionA.css}">
 
 </head>
 
 <body>
 <div th:replace="fragments/header :: site-header"></div>
 
-//section a olga
-<div>
 
-</div>
+<!-- ----- HERO SEKTION ----- -->
+<section class="heroBillede" th:style="|background-image: url('@{/images/heroSection_billede.jpg}');|">
+    <div class="container heroInner">
+        <div class="heroTekst">
+            <h1>
+                GØR EN<br>
+                FORSKEL<br>
+                FOR ANDRE
+            </h1>
+        </div>
+    </div>
+</section>
+
+<!-- ----- ET MÅLTID KAN GØRE EN FORSKEL (navngives etMaaltid) ----- -->
+<section class="etMaaltid">
+
+    <!-- div til venstre -->
+    <div class="etMaaltidVenstre">
+        <!-- knapper -->
+        <a href="/restaurant"><img src="/images/icons/SekA_TilmeldDinRestaurant.svg" alt="Tilmeld" class="MaaltidKnap"></a>
+        <a href="/laes-mere"><img src="/images/icons/SekA_LæsMere.svg" alt="Læs mere" class="MaaltidKnap"></a>
+    </div>
+
+    <!-- div til højre -->
+    <div class="etMaaltidHoejre">
+        <h2>Et måltid kan gøre en forskel</h2>
+        <p>- for både mennesker og planeten.</p>
+    </div>
+</section>
+
+
+
 
 //section b olga
 <div>
