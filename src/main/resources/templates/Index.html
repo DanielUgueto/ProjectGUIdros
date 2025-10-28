@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="${presentation.title}">'idk'</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <link th:href="@{/style.frontPage.sectionE.css}" rel="stylesheet">
+
+
 </head>
 
 <body>
@@ -65,7 +68,37 @@
     </div>
 </section>
 
-//section e rass
+<section class="support">
+    <div class="support__left">
+        <h2>Støt vores arbejde</h2>
+        <p>
+            Vi tror på partnerskaber, der skaber reel forandring. Gennem samarbejde med fonde og NGO’er
+            kan vi skalere vores indsats og sikre, at endnu flere mennesker får adgang til mad.
+            Lad os sammen skabe et Danmark, hvor madspild bliver til måltider – og overskud bliver til omsorg.
+        </p>
+        <button class="btn btn--donate" type="button">Donér</button>
+    </div>
+
+    <div class="support__right">
+        <img class="support__img"
+             th:src="@{/assets/frontpage/pexels-markusspiske.jpg}"
+             alt="Demonstration med skilte" />
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <div class="cta__card">
+        <h2>Klar til at gøre en forskel?</h2>
+        <p>Tilmeld dig i dag og vær med til at bekæmpe madspild mens du hjælper dit lokalsamfund</p>
+
+        <form class="cta__form" action="#" method="post">
+            <input class="cta__input" type="email" placeholder="din@email.dk" required />
+            <button class="btn btn--cta" type="submit">Kom i gang</button>
+        </form>
+    </div>
+</section>
+
 <div>
 
 </div>
