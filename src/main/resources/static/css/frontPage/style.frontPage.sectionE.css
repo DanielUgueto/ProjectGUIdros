@@ -48,7 +48,7 @@ body{
     gap:1.2rem;
 }
 
-/* Støt vores arbejde – én linje (desktop), tyndere vægt */
+/* Støt vores arbejde */
 .support__left h2{
     font-family:"Inter", sans-serif;
     font-weight:500;               /* tyndere look */
@@ -59,7 +59,7 @@ body{
     white-space:nowrap;            /* fasthold én linje på brede skærme */
 }
 
-/* Brødtekst – større og tynd */
+/* Brødtekst */
 .support__left p{
     font-size:1.18rem;             /* større brødtekst */
     line-height:1.72;
@@ -69,7 +69,7 @@ body{
     margin:0 0 1.4rem 0;           /* afstand til knap */
 }
 
-/* Donér-knap – størrelse, radius og placering */
+/* Donér-knap */
 .btn{
     display:inline-flex; align-items:center; justify-content:center;
     border:0; cursor:pointer;
@@ -94,9 +94,8 @@ body{
     width:100%; height:100%; object-fit:cover; display:block;
 }
 
-/* ===================================================== */
-/* CTA-SEKTION                                           */
-/* ===================================================== */
+
+/* CTA-SEKTION*/
 
 .cta{
     background:var(--apricot);
@@ -113,7 +112,7 @@ body{
     text-align:center;
 }
 
-/* "Klar til at gøre en forskel?" – tynd vægt */
+/* "Klar til at gøre en forskel?" */
 .cta__card h2{
     font-family:"Inter", sans-serif;
     font-weight:500;               /* tynd */
@@ -123,7 +122,6 @@ body{
     margin-bottom:1.0rem;
 }
 
-/* Undertekst – tynd */
 .cta__card p{
     font-size:1.05rem;
     line-height:1.6;
@@ -163,9 +161,8 @@ body{
 }
 .btn--cta:hover{ opacity:.9; }
 
-/* ===================================================== */
-/* RESPONSIVE                                            */
-/* ===================================================== */
+
+/* RESPONSIVE */
 
 @media (max-width:1000px){
     .support__left{ padding:2.4rem 1.8rem; }
