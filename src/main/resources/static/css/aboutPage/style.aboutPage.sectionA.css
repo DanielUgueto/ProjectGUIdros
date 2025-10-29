@@ -6,7 +6,6 @@
     --page-max:1200px;
 }
 
-/* Topbånd med tre “pills” – præcis højde og overlay som i mockup */
 .section-a{
     position:relative;
     background-position:center;
@@ -43,6 +42,7 @@
 }
 .pill ul{ margin:0; padding-left:1.1rem }
 .pill li{ line-height:1.55; font-weight:500 }
+
 @media (max-width: 960px){
     .a-inner{ grid-template-columns:1fr; }
 }

@@ -1,4 +1,4 @@
-/* Inter (TTF) */
+
 @font-face {
     font-family: "Inter";
     font-style: normal;
@@ -14,39 +14,39 @@
     font-display: swap;
 }
 
-/* Theme */
+
 :root{
-    --olive:#5f7855;   /* venstre panel */
-    --peach:#f3cdb9;   /* højre panel   */
-    --cream:#f1efe7;   /* kort          */
+    --olive:#5f7855;
+    --peach:#f3cdb9;
+    --cream:#f1efe7;
     --ink:#083747;
     --pad:32px;
     --gap:32px;
     --radius:20px;
 
-    /* Ens højde til begge diagrambokse (responsiv) */
+
     --chartH: clamp(300px, 36vw, 520px);
 }
 
-/* ===== Section C container — FULL BLEED og 2 kolonner ===== */
+
 #statsC{
     font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
 
-    /* full-bleed trick (sprænger ud af centrering) */
+
     width: 100vw;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
 
     display:grid;
     grid-template-columns: 1fr 1fr;
-    align-items: stretch; /* panelhøjder følger hinanden */
+    align-items: stretch;
 }
 
-/* Paneler (de farvede kolonner) */
+
 #statsC .panel{
     padding:var(--pad);
-    display:grid;                 /* sikrer 2 rækker: kort over, diagram under */
-    grid-template-rows: auto 1fr; /* kort i auto-højde, diagramboks udfylder resten */
+    display:grid;
+    grid-template-rows: auto 1fr;
     align-items: start;
     gap:var(--gap);
     min-width:0;
@@ -54,7 +54,7 @@
 #statsC .panel--left{  background:var(--olive); }
 #statsC .panel--right{ background:var(--peach); }
 
-/* Faktakort – smalt og kompakt */
+
 #statsC .fact{
     background:var(--cream);
     color:var(--ink);
@@ -68,21 +68,20 @@
 #statsC .fact__value{ font-weight:800; font-size:34px; line-height:1.1; }
 #statsC .fact__sub{   font-size:14px; margin-top:6px; opacity:.9; }
 
-/* ===== Diagramboks — ENS HØJDE på begge sider ===== */
+
 #statsC .chart{
     /* figuren ER selve boksen */
     height: var(--chartH);
     width: min(92%, 560px);
     justify-self:center;
 
-    display:flex;                 /* centrer selve billedet */
+    display:flex;
     align-items:center;
     justify-content:center;
 
     border-radius:12px;
     overflow:hidden;
-    /* valgfrit: let baggrund så boksen “føles” ens */
-    /* background: rgba(255,255,255,.06); */
+
 }
 #statsC .chart img{
     max-width:100%;
@@ -93,7 +92,7 @@
     display:block;
 }
 
-/* Mobil: stack */
+
 @media (max-width: 980px){
     #statsC{
         grid-template-columns: 1fr;
