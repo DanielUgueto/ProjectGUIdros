@@ -18,6 +18,7 @@
 <!-- ============================ SEKTION A - Olga ============================ -->
 
 <!-- ---------- 1. HERO SEKTION ---------- -->
+
 <section class="heroBillede" th:style="|background-image: url('@{/images/heroSection_billede.jpg}');|">
     <div class="container heroInner">
         <div class="heroTekst">
@@ -28,8 +29,10 @@
             </h1>
         </div>
     </div>
-</section>
 
+    <!-- Dark overlay for animation -->
+    <div class="hero-darkener"></div>
+</section>
 
 <!-- ---------- 2. ET MÅLTID KAN GØRE EN FORSKEL ---------- -->
 <section class="etMaaltid">
@@ -169,13 +172,13 @@
     </div>
 
     <div class="support__right">
-        <img class="support__img"
         <img th:src="@{/assets/frontpage/pexels-markusspiske.jpg}"
-             alt="Demonstration med skilte">
+             alt="Demonstration med skilte"
+             class="support__img">
+
     </div>
 </section>
 
-</body>
 
 <!-- CTA -->
 <section class="cta">
@@ -190,16 +193,55 @@
     </div>
 </section>
 
-
-<div>
-
-</div>
-
-
-
 <footer>
     <div th:insert="~{fragments/footer :: site-footer}"></div>
 </footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const hero = document.querySelector(".heroBillede");
+        const darkener = hero?.querySelector(".hero-darkener");
+        if (!hero || !darkener) return;
+
+        let currentDarkness = 0;
+        let targetDarkness = 0;
+        const maxDarkness = 2; // maximum opacity
+        let lastScrollY = window.scrollY;
+
+        // animation smoothness
+        const easeDarken = 0.07;
+        const easeBrighten = 0.04;
+
+        function animate() {
+            const easing = targetDarkness < currentDarkness ? easeBrighten : easeDarken;
+            currentDarkness += (targetDarkness - currentDarkness) * easing;
+            darkener.style.background = `rgba(0, 0, 0, ${currentDarkness.toFixed(3)})`;
+            requestAnimationFrame(animate);
+        }
+
+        function handleScroll() {
+            const rect = hero.getBoundingClientRect();
+            const vh = window.innerHeight;
+            const y = window.scrollY;
+            const scrollSpeed = Math.min(Math.abs(y - lastScrollY) / 50, 1);
+            lastScrollY = y;
+
+            // fully bright at top or below hero
+            if (y <= 2 || rect.bottom <= 0) {
+                targetDarkness = 0;
+                return;
+            }
+
+            // progress through hero section
+            const progress = Math.min(Math.max(1 - rect.top / rect.height, 0), 1);
+            const speedFactor = 0.3 + scrollSpeed * 0.7;
+            targetDarkness = maxDarkness * progress * speedFactor;
+        }
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        animate();
+    });
+</script>
 
 </body>
 </html>

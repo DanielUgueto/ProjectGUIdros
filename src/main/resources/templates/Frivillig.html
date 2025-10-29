@@ -3,25 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="${presentation.title}">Frivillig</title>
-    <!--    <link rel="stylesheet" th:href="@{/css/doner.css}">-->
     <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/frivillig.css}">
 </head>
 <body>
-<div th:replace="fragments/header :: site-header"></div>
 
-<div class="content">
+<header>
+    <div th:replace="fragments/header :: site-header"></div>
+</header>
 
-    <h1 th:text="${presentation.title}"></h1>
-    <p th:text="${presentation.description}"></p>
-
-    <div th:each="img : ${presentation.images}">
-        <img th:src="@{${img}}" alt="Billede" style="max-width:640px; margin-bottom:20px;">
+<!-- HERO SEKTION -->
+<section class="hero-frivillig">
+    <div class="hero-overlay">
+        <div class="hero-text">
+            <h1>Bliv frivillig – gør en forskel for andre</h1>
+            <p>
+                Som frivillig er du med til at skabe et fællesskab, hvor overskud bliver delt i stedet for smidt ud.
+                Hjælp os med at redde mad, støtte mennesker i din by og gøre en reel forskel i hverdagen.
+            </p>
+            <a href="#" class="btn">Tilmeld dig som frivillig</a>
+        </div>
     </div>
-</div>
+</section>
 
+<!-- INFO SEKTION -->
+<section class="info-frivillig">
+    <h2>Din indsats betyder noget</h2>
+    <p>
+        Uanset om du hjælper med at hente overskydende mad, pakke måltider eller dele dem ud til mennesker,
+        der har brug for hjælp, gør du en kæmpe forskel.
+        Sammen sørger vi for, at god mad bliver spist – og ikke spildt.
+    </p>
+</section>
+
+<!-- SÅDAN VIRKER DET -->
+<section class="how-it-works fade-in-on-scroll">
+    <h2>Sådan bliver du frivillig</h2>
+    <p>Det tager kun få minutter at blive en del af fællesskabet</p>
+
+    <div class="steps">
+        <div class="step">
+            <h3>1. Tilmeld dig</h3>
+            <p>Udfyld vores tilmeldingsformular og fortæl, hvordan du gerne vil hjælpe.</p>
+        </div>
+        <div class="step">
+            <h3>2. Bliv introduceret</h3>
+            <p>Du modtager en kort introduktion til vores arbejde og hvordan du kan bidrage.</p>
+        </div>
+        <div class="step">
+            <h3>3. Gør en forskel</h3>
+            <p>Vær med til at bekæmpe madspild og bring håb og varme ud i dit lokalområde.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA SEKTION -->
+<section class="cta-frivillig">
+    <h2>Klar til at blive frivillig?</h2>
+    <p>Bliv en del af FoodBoks-fællesskabet og vær med til at skabe værdi af overskud.</p>
+    <button>Tilmeld dig nu</button>
+</section>
+
+<!-- FOOTER -->
 <footer>
     <div th:insert="~{fragments/footer :: site-footer}"></div>
 </footer>
+
+<!-- ANIMATIONER OG SCROLL-EFFEKT -->
+<script>
+    // Fade-in animationer for hero-tekst og overlay
+    const fadeElements = document.querySelectorAll('.hero-text, .hero-overlay');
+
+    const fadeInOnScroll = () => {
+        fadeElements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.8) {
+                el.style.animationPlayState = 'running';
+            }
+        });
+    };
+
+    fadeElements.forEach(el => {
+        el.style.animationPlayState = 'paused';
+    });
+
+    window.addEventListener('scroll', fadeInOnScroll);
+    window.addEventListener('load', fadeInOnScroll);
+</script>
+
+<script>
+    // Fade-in for øvrige sektioner
+    document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        const sections = document.querySelectorAll(".fade-in-on-scroll");
+        sections.forEach(section => observer.observe(section));
+    });
+</script>
+
+<!-- FLYDENDE TILBAGE-KNAP -->
+<button id="backToMain" class="back-button">← Tilbage til forsiden</button>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const backButton = document.getElementById("backToMain");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 800) {
+                backButton.classList.add("visible");
+            } else {
+                backButton.classList.remove("visible");
+            }
+        });
+
+        backButton.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            setTimeout(() => window.location.href = /*[[ @{/} ]]*/ '/', 400);
+        });
+    });
+</script>
 
 </body>
 </html>

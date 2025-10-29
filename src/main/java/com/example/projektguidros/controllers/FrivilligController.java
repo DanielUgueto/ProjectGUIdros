@@ -17,12 +17,12 @@ public class FrivilligController {
         Presentation presentation = new Presentation(
                 "Frivillig",
                 "Bliv frivillig og lav en reél forandring i dit lokale fællesskab.",
-                List.of("/images/vol1.jpg", "/images/vol2.jpg"),
+                List.of("/images/vol0.jpg", "/images/vol2.jpg"),
                 null
         );
 
         model.addAttribute("presentation", presentation);
-        return "Doner";
+        return "Frivillig";
     }
 
 }

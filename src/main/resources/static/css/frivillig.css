@@ -1,6 +1,3 @@
-/* ===========================================
-   DONER.CSS — Perfect visual match to Section A (final version)
-   =========================================== */
 
 /* #edcdb6 pink */
 /* #576b4b dark green */
@@ -21,7 +18,7 @@ html, body {
 }
 
 /* Fix hero section and navbar exact width */
-body, header, .navbar, .hero-doner {
+body, header, .navbar, .hero-frivillig {
     width: 100%;
     max-width: 100%;
 }
@@ -40,11 +37,11 @@ body {
 }
 
 /* ===== HERO SECTION (centered background image version + zoom effect) ===== */
-.hero-doner {
+.hero-frivillig {
     position: relative;
     width: 100%;
     height: 80vh;
-    background: url("/images/chatdoner.png") center center / cover no-repeat;
+    background: url("/images/vol0.png") center center / cover no-repeat;
     /*overflow: hidden;*/
     animation: zoomHero 20s ease-in-out forwards;
 }
@@ -66,7 +63,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(58, 86, 55, 0.45);
+    background: rgba(86, 55, 55, 0.45);
     display: flex;
     align-items: center;      /* vertical centering */
     justify-content: center;  /* horizontal centering */
@@ -121,7 +118,7 @@ body {
     padding: 0.9rem 2.2rem;
     border-radius: 50px;
     font-weight: 600;
-    background-color: #727a43;
+    background-color: #edcdb6;
     color: #fff;
     border: none;
     transition: all 0.3s ease;
@@ -130,25 +127,25 @@ body {
 }
 
 .btn:hover {
-    background-color: #2f452d;
+    background-color: #ba5357;
     transform: translateY(-2px);
 }
 
 /* ===== INFO SECTION ===== */
-.info-doner {
+.info-frivillig {
     background-color: #4A8290;
     text-align: center;
     padding: 5rem 10%;
 }
 
-.info-doner h2 {
+.info-frivillig h2 {
     font-size: 2rem;
     color: #ffffff;
     margin-bottom: 1rem;
     font-weight: 700;
 }
 
-.info-doner p {
+.info-frivillig p {
     font-size: 1.05rem;
     color: #eee;
     max-width: 700px;
@@ -159,7 +156,7 @@ body {
 /* ===== HOW IT WORKS SECTION (scroll fade-in) ===== */
 .how-it-works {
     position: relative;
-    background: url("/images/vol2.jpg") center center / cover no-repeat;
+    background: url("/images/vol1.jpg") center center / cover no-repeat;
     padding: 5rem 10%;
     text-align: center;
     overflow: hidden;
@@ -200,7 +197,7 @@ body {
 }
 
 .how-it-works p {
-    color: #f2f2f2;
+    color: #ffFFFf;
     font-size: 1.05rem;
     margin-bottom: 3rem;
 }
@@ -226,7 +223,7 @@ body {
 }
 
 .step {
-    background-color: #576b4b;
+    background-color: #ba5357;
     border-radius: 20px;
     width: 280px;
     padding: 2rem 1.5rem;
@@ -245,26 +242,26 @@ body {
 }
 
 /* ===== CTA SECTION ===== */
-.cta-doner {
-    background-color: #727a43;
+.cta-frivillig {
+    background-color: #edcdb6;
     color: #fff;
     text-align: center;
     padding: 5rem 2rem;
 }
 
-.cta-doner h2 {
+.cta-frivillig h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
 }
 
-.cta-doner p {
+.cta-frivillig p {
     font-size: 1.1rem;
     margin-bottom: 2rem;
 }
 
-.cta-doner button {
+.cta-frivillig button {
     background-color: #fff;
-    color: #576b4b;
+    color: #ba5357;
     font-weight: 700;
     font-size: 1.1rem;
     padding: 1rem 2.5rem;
@@ -274,15 +271,15 @@ body {
     transition: all 0.3s ease;
 }
 
-.cta-doner button:hover {
-    background-color: #576b4b;
+.cta-frivillig button:hover {
+    background-color: #ba5357;
     transform: translateY(-2px);
     color: #fff;
 }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
-    .hero-doner {
+    .hero-frivillig {
         height: 70vh;
     }
 
@@ -309,7 +306,7 @@ body {
     position: fixed;
     bottom: 2rem;
     right: -250px; /* hidden off-screen */
-    background-color: #2f452d;
+    background-color: #5b2426;
     color: #fff;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
@@ -329,6 +326,6 @@ body {
 
 /* Hover effect */
 .back-button:hover {
-    background-color: #2f452d;
+    background-color: #5b2426;
     transform: translateX(-3px);
 }
