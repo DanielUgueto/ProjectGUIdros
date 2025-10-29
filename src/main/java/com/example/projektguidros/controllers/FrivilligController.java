@@ -8,16 +8,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
-@Controller
-public class DonerController {
 
-    @GetMapping("/Doner")
-    public String donerPage(Model model) {
+@Controller
+public class FrivilligController {
+
+    @GetMapping("/Frivillig")
+    public String frivilligPage(Model model) {
         Presentation presentation = new Presentation(
-                "Donér",
-                "Hjælp os med at redde madspild og støtte de udsatte.",
-                List.of("/images/friv1.jpg", "/images/friv2.jpg"),
-                null // last argument, if not used
+                "Frivillig",
+                "Bliv frivillig og lav en reél forandring i dit lokale fællesskab.",
+                List.of("/images/vol1.jpg", "/images/vol2.jpg"),
+                null
         );
 
         model.addAttribute("presentation", presentation);
