@@ -1,0 +1,48 @@
+:root{
+    --white:#fff;
+    --teal-700:#3E6F79;
+    --teal-overlay:rgba(46,86,95,.82);
+    --pill:rgba(255,255,255,.18);
+    --page-max:1200px;
+}
+
+/* Topbånd med tre “pills” – præcis højde og overlay som i mockup */
+.section-a{
+    position:relative;
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    min-height:250px;
+    padding:34px 0;
+    color:var(--white);
+}
+.section-a::before{
+    content:"";
+    position:absolute; inset:0;
+    background:var(--teal-overlay);
+}
+.a-inner{
+    position:relative; z-index:1;
+    width:min(var(--page-max), 100%);
+    margin-inline:auto;
+    padding:0 24px;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:28px;
+}
+.pill{
+    background:var(--pill);
+    backdrop-filter:blur(2px);
+    border-radius:18px;
+    padding:18px 22px;
+}
+.pill h3{
+    margin:0 0 8px 0;
+    font-weight:800;
+    font-size:20px;
+}
+.pill ul{ margin:0; padding-left:1.1rem }
+.pill li{ line-height:1.55; font-weight:500 }
+@media (max-width: 960px){
+    .a-inner{ grid-template-columns:1fr; }
+}

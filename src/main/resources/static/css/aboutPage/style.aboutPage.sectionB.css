@@ -1,0 +1,118 @@
+/* ===== Font: Inter (fra /static/fonts) ===== */
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 100 900;
+    src:
+            url("/fonts/Inter-VariableFont_opsz,wght.woff2") format("woff2"),
+            url("/fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+    font-display: swap;
+}
+@font-face {
+    font-family: "Inter";
+    font-style: italic;
+    font-weight: 100 900;
+    src:
+            url("/fonts/Inter-Italic-VariableFont_opsz,wght.woff2") format("woff2"),
+            url("/fonts/Inter-Italic-VariableFont_opsz,wght.ttf") format("truetype");
+    font-display: swap;
+}
+
+/* ===== Vars ===== */
+:root {
+    --mv-olive: #7b8551;        /* venstre panel */
+    --mv-olive-strong: #6c7746; /* højre panel */
+    --mv-text: #ffffff;
+    --mv-side-w: 320px;         /* bredde på sidepaneler på desktop */
+    --mv-gap: 0;                /* ingen mellemrum – som i dit mockup */
+    --mv-pad: 32px;
+}
+
+/* ===== Layout (FULL-BLEED) ===== */
+.mv {
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+    /* Full width ud til kanterne */
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+
+    display: grid;
+    grid-template-columns: var(--mv-side-w) 1fr var(--mv-side-w);
+    align-items: stretch;      /* paneler = samme højde som billedet */
+    gap: var(--mv-gap);
+}
+
+/* ===== Panels ===== */
+.mv__panel {
+    background: var(--mv-olive);
+    color: var(--mv-text);
+    padding: var(--mv-pad) 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* centrér tekst vertikalt */
+    min-height: 360px;         /* sikrer en pæn minimumshøjde */
+}
+.mv__panel--right { background: var(--mv-olive-strong); }
+
+.mv__panel h2 {
+    font-size: 28px;
+    line-height: 1.2;
+    margin: 0 0 16px 0;
+    letter-spacing: 0.2px;
+}
+.mv__panel p {
+    margin: 0 0 12px 0;
+    line-height: 1.6;
+    font-size: 16px;
+}
+.mv__panel ul {
+    margin: 8px 0 0 0;
+    padding-left: 20px;
+    display: grid;
+    gap: 10px;
+}
+.mv__panel ul li {
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* ===== Billedet i midten ===== */
+.mv__image {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    min-height: 360px;      /* matcher panels’ min-højde */
+    background: #111;
+}
+.mv__image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;      /* fylder hele midterkolonnen */
+    filter: grayscale(100%);
+}
+
+/* ===== Responsiv ===== */
+@media (max-width: 1100px) {
+    :root { --mv-side-w: 280px; }
+    .mv__panel { padding: 28px 24px; }
+    .mv__panel h2 { font-size: 24px; }
+}
+
+@media (max-width: 900px) {
+    .mv {
+        grid-template-columns: 1fr;   /* stack på mobil */
+    }
+    .mv__image {
+        order: 2;                     /* billede mellem mission og vision */
+        height: 56vw;                 /* pæn responsiv højde */
+        max-height: 420px;
+    }
+    .mv__panel {
+        order: 1;
+        padding: 24px 20px;
+        min-height: unset;            /* mobil kan være friere i højden */
+    }
+    .mv__panel--right { order: 3; }
+}

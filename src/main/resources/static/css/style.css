@@ -176,6 +176,24 @@
     .footer-column {
         margin-bottom: 30px; /* Plads mellem sektionerne, når de er stablet */
     }
+
+
 }
+
+/* Fjern standard spacing på nav-listen */
+.navbar ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Sørg for at margin ikke kan kollapse udenfor navbaren */
+.navbar {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* stopper margin-collapse */
+}
+
+
+
 
 
