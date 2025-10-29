@@ -3,25 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="${presentation.title}">Donér</title>
-<!--    <link rel="stylesheet" th:href="@{/css/doner.css}">-->
     <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/doner.css}">
 </head>
 <body>
+
+<header>
 <div th:replace="fragments/header :: site-header"></div>
+</header>
 
-<div class="content">
-
-    <h1 th:text="${presentation.title}"></h1>
-    <p th:text="${presentation.description}"></p>
-
-    <div th:each="img : ${presentation.images}">
-        <img th:src="@{${img}}" alt="Billede" style="max-width:640px; margin-bottom:20px;">
+<section class="hero-doner">
+    <div class="hero-overlay">
+        <div class="hero-text">
+            <h1>Gør en forskel med din donation</h1>
+            <p>
+                Din støtte hjælper os med at bekæmpe madspild og give måltider til dem, der har mest brug for det.
+                Sammen kan vi skabe et fællesskab, hvor overskud bliver delt i stedet for smidt ud.
+            </p>
+            <a href="#" class="btn">Donér nu</a>
+        </div>
     </div>
-</div>
+</section>
+
+
+<section class="info-doner">
+    <h2>Hver donation gør en forskel</h2>
+    <p>
+        Når du støtter vores arbejde, hjælper du med at sikre, at god mad ikke går til spilde.
+        Din donation går direkte til at hente, pakke og levere overskydende måltider til mennesker,
+        som har brug for hjælp – med værdighed og omtanke.
+    </p>
+</section>
+
+
+<section class="how-it-works fade-in-on-scroll">
+    <h2>Sådan virker det</h2>
+    <p>Et simpelt koncept, der gør en stor forskel</p>
+
+    <div class="steps">
+        <div class="step">
+            <h3>1. Du donerer</h3>
+            <p>Vælg et beløb – stort eller lille. Hver donation tæller.</p>
+        </div>
+        <div class="step">
+            <h3>2. Vi fordeler</h3>
+            <p>Din støtte går direkte til at indsamle og uddele overskydende mad.</p>
+        </div>
+        <div class="step">
+            <h3>3. Sammen gør vi en forskel</h3>
+            <p>Flere får mad på bordet – og mindre mad går til spilde.</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta-doner">
+    <h2>Klar til at hjælpe?</h2>
+    <p>Bliv en del af fællesskabet og hjælp os med at gøre overskud til omsorg.</p>
+    <button>Støt nu</button>
+</section>
+
+
 
 <footer>
     <div th:insert="~{fragments/footer :: site-footer}"></div>
 </footer>
+
+
+
+<!-- lidt js -->
+<script>
+    // Function to trigger fade-in when elements enter the viewport
+    const fadeElements = document.querySelectorAll('.hero-text, .hero-overlay');
+
+    const fadeInOnScroll = () => {
+        fadeElements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.8) {
+                el.style.animationPlayState = 'running';
+            }
+        });
+    };
+
+    // Initialize: pause all animations until triggered
+    fadeElements.forEach(el => {
+        el.style.animationPlayState = 'paused';
+    });
+
+    // Listen for scroll and load
+    window.addEventListener('scroll', fadeInOnScroll);
+    window.addEventListener('load', fadeInOnScroll);
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target); // kør kun én gang
+                }
+            });
+        }, { threshold: 0.2 }); // start animation når 20% af sektionen er synlig
+
+        const sections = document.querySelectorAll(".fade-in-on-scroll");
+        sections.forEach(section => observer.observe(section));
+    });
+</script>
+
+<!-- Floating Back Button -->
+<button id="backToMain" class="back-button">← Tilbage til forsiden</button>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const backButton = document.getElementById("backToMain");
+
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 800) {
+                backButton.classList.add("visible");
+            } else {
+                backButton.classList.remove("visible");
+            }
+        });
+
+        backButton.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            setTimeout(() => window.location.href = /*[[ @{/} ]]*/ '/', 400);
+        });
+
+    });
+</script>
+
 
 </body>
 </html>
