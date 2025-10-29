@@ -19,8 +19,14 @@ public class PresentationController {
                 List.of(),
                 null
         );
+
         model.addAttribute("presentation", presentation);
         return "index";
     }
 
+    @GetMapping("/Login")
+    public String showLoginPage() {
+        return "Login";
+
+    }
 }

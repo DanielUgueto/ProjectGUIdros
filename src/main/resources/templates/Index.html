@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="${presentation.title}">'idk'</title>
-    <link rel="stylesheet" th:href="@{/style.css}">
-    <link th:href="@{/css/style.frontPage.sectionE.css}" rel="stylesheet">
     <link th:href="@{/css/style.css}" rel="stylesheet">
 
 
@@ -108,7 +106,7 @@
 
 
 <footer>
-    <div th:insert="~{fragments/footer :: site-footer}"></div>
+    <div th:replace="fragments/footer :: site-footer"></div>
 </footer>
 
 </body>

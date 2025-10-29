@@ -178,4 +178,136 @@
     }
 }
 
+/* ==================================== */
+/* LOGIN PAGE STYLING                   */
+/* ==================================== */
+
+/* Sørger for, at siden fylder hele højden og centrerer indholdet */
+.login-page {
+    background-color: #f7f3ed; /* Lys baggrund for at efterligne 'FORSIDE' sektionen */
+    display: flex;
+    flex-direction: column; /* Stak elementer vertikalt */
+    min-height: 100vh;
+}
+
+/* Simulerer den mørke topbar fra din navigation */
+.login-header-bar {
+    background-color: #1b4a52;
+    height: 40px;
+    width: 100%;
+}
+
+.login-container {
+    flex-grow: 1; /* Fylder det resterende rum */
+    display: flex;
+    justify-content: center; /* Centrer vandret */
+    align-items: center; /* Centrer lodret */
+    padding: 40px 20px;
+}
+
+/* Det centrale Login Kort (Card) */
+.login-card {
+    background-color: #526c47; /* MODTAGER farven som baggrund for kortet */
+    color: #f2f2f2;
+    padding: 40px;
+    border-radius: 8px; /* Lidt afrundede hjørner */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Begrænser bredden */
+}
+
+.card-title {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.card-subtitle {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    opacity: 0.8;
+}
+
+/* Formular elementer */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.9); /* Lidt gennemsigtig hvid */
+    color: #1b4a52;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.form-group input:focus {
+    background-color: white;
+    outline: 2px solid #c94b54; /* Rød accentfarve ved fokus */
+}
+
+/* Login Knap (Button) */
+.login-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #c94b54; /* FRIVILLIG farven som knap-accent */
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #a83d46;
+}
+
+/* Links */
+.forgot-password,
+.signup-text a {
+    color: #f4cbb3; /* En lys farve fra dit palette */
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: block; /* Giver det plads */
+    margin-bottom: 15px;
+    transition: color 0.3s;
+}
+
+.forgot-password {
+    text-align: right;
+    margin-top: -10px; /* Justerer positionen */
+}
+
+.signup-text {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.9rem;
+}
+
+.signup-text a:hover,
+.forgot-password:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Responsivitet for små skærme */
+@media (max-width: 450px) {
+    .login-card {
+        padding: 30px 20px;
+    }
+}
+
 

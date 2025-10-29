@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodBoks Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <div th:replace="fragments/header :: site-header"></div>
+
+</head>
+<body class="login-page">
+
+<div class="login-container">
+    <div class="login-card">
+        <h1 class="card-title">Log ind på FoodBoks</h1>
+        <p class="card-subtitle">Vælg din rolle for at logge ind</p>
+
+        <form action="/login" method="POST" class="login-form">
+
+            <div class="form-group">
+                <label for="username">E-mail eller Brugernavn</label>
+                <input type="text" id="username" name="username" placeholder="Indtast din e-mail" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Adgangskode</label>
+                <input type="password" id="password" name="password" placeholder="Indtast adgangskode" required>
+            </div>
+
+            <a href="#" class="forgot-password">Glemt adgangskode?</a>
+
+            <button type="submit" class="login-button">Log ind</button>
+
+        </form>
+
+        <p class="signup-text">Har du ingen konto? <a href="#">Opret en ny bruger her</a></p>
+    </div>
+</div>
+<footer th:replace="fragments/footer :: footer"></footer>
+</body>
+</html>
