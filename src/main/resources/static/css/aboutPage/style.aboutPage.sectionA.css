@@ -46,3 +46,19 @@
 @media (max-width: 960px){
     .a-inner{ grid-template-columns:1fr; }
 }
+
+/* Titel "Om os" i toppen */
+.a-title {
+    position: relative;
+    z-index: 1;
+    width: min(var(--page-max), 100%);
+    margin-inline: auto;
+    padding-inline: 24px;
+
+    margin-bottom: 20px; /* luft mellem titel & pills */
+
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--white);
+}
+
