@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="da" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Om os | FoodBoks</title>
+
+    <!-- Inter font (local) -->
+    <link rel="preload" th:href="@{/fonts/Inter-VariableFont_opsz,wght.woff2}" as="font" type="font/woff2" crossorigin>
+    <style>
+        @font-face{
+            font-family:"Inter";
+            src:url("[[@{/fonts/Inter-VariableFont_opsz,wght.woff2}]]") format("woff2");
+            font-weight:100 900;
+            font-style:normal;
+            font-display:swap;
+        }
+        html, body { margin:0; padding:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+
+        main > :first-child { margin-top: 0; }
+    </style>
+
+    <!-- Global styles -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+    <!-- Page sections (A–D) -->
+    <link rel="stylesheet" th:href="@{/css/aboutPage/style.aboutPage.sectionA.css}">
+    <link rel="stylesheet" th:href="@{/css/aboutPage/style.aboutPage.sectionB.css}">
+    <link rel="stylesheet" th:href="@{/css/aboutPage/style.aboutPage.sectionC.css}">
+    <link rel="stylesheet" th:href="@{/css/aboutPage/style.aboutPage.sectionD.css}">
+</head>
+
+<body class="about">
+
+<!-- Header -->
+<div th:replace="fragments/header :: site-header"></div>
+
+<main id="about-page">
+    <!--SECTION A -->
+    <section class="section-a"
+             th:style="|background-image: url('@{/assets/aboutPage/hands.jpg}');|">
+        <div class="a-inner">
+            <div class="pill">
+                <h3>For restauranter</h3>
+                <ul>
+                    <li>Sætter overskudsmåltider i en boks udenfor</li>
+                    <li>Får dokumenteret klimaeffekt og ESG-data</li>
+                </ul>
+            </div>
+            <div class="pill">
+                <h3>For samfundet</h3>
+                <ul>
+                    <li>Mindre spild</li>
+                    <li>Mindre sult</li>
+                </ul>
+            </div>
+            <div class="pill">
+                <h3>For udsatte modtagere</h3>
+                <ul>
+                    <li>Får en personlig chip</li>
+                    <li>Kan hente ét måltid om dagen</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION B -->
+    <section id="mission-vision" class="mv">
+        <div class="mv__panel mv__panel--left">
+            <h2>Mission</h2>
+            <p>Vores mission er at skabe et værdigt måltid for udsatte mennesker, samtidig med at vi reducerer
+                madspild i Danmark. Vi gør det nemt for restauranter at donere god mad, så den ikke bliver smidt ud.</p>
+            <p>Kort sagt: Vi sørger for, at mad bliver spist af mennesker, ikke af skraldespande.</p>
+        </div>
+
+        <figure class="mv__image">
+            <img src="/assets/aboutPage/seekingkindness.jpg"
+                 th:src="@{/assets/aboutPage/seekingkindness.jpg}"
+                 alt="Person med skiltet 'Seeking Human Kindness' på en station">
+        </figure>
+
+        <div class="mv__panel mv__panel--right">
+            <h2>Vision</h2>
+            <ul>
+                <li>Ingen går sultne i seng</li>
+                <li>Overskudsmad altid finder en modtager</li>
+                <li>Sociale og miljømæssige udfordringer løses i fællesskab</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SECTION C -->
+    <section id="statsC">
+        <!-- Venstre panel (grøn) -->
+        <div class="panel panel--left">
+            <div class="fact">
+                <div class="fact__value">2 tons</div>
+                <div class="fact__sub">Madspild reddet</div>
+            </div>
+
+            <figure class="chart">
+                <img
+                        src="/assets/aboutPage/diagram.png"
+                        th:src="@{/assets/aboutPage/diagram.png}"
+                        alt="Søjlediagram: Måltider pr. måned" />
+            </figure>
+        </div>
+
+
+        <div class="panel panel--right">
+            <figure class="chart chart--pie">
+                <img
+                        src="/assets/aboutPage/circlediagram.png"
+                        th:src="@{/assets/aboutPage/circlediagram.png}"
+                        alt="Cirkeldiagram: Fordeling af måltidstyper" />
+            </figure>
+
+            <div class="fact">
+                <div class="fact__value">500 +</div>
+                <div class="fact__sub">Måltider uddelt</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION D -->
+    <section class="section-d">
+        <div class="d-grid">
+            <div class="d-copy">
+                <h2>Historien bag</h2>
+                <p>Initiativet udspringer af et ønske om at skabe reel forandring med en enkel idé.</p>
+                <p>Vi så mad blive smidt ud, mens mennesker gik sultne hjem.</p>
+                <p>Det ville vi lave om på.</p>
+                <p>Projektet drives af studerende og frivillige, der kombinerer teknologi, social ansvarlighed og bæredygtighed i én løsning.</p>
+            </div>
+            <figure class="d-photo">
+                <img th:src="@{/assets/aboutPage/teamwork.jpg}" alt="Hænder lagt ovenpå hinanden">
+            </figure>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer>
+    <div th:insert="~{fragments/footer :: site-footer}"></div>
+</footer>
+</body>
+</html>

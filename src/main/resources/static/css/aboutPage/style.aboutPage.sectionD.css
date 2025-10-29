@@ -1,0 +1,38 @@
+:root{
+    --rose:#CF6A72;
+    --page-max:1200px;
+}
+
+
+.section-d{
+    background:var(--rose);
+    color:#fff;
+    padding:34px 0;
+}
+.d-grid{
+    width:min(var(--page-max),100%);
+    margin-inline:auto;
+    padding:0 24px;
+    display:grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap:22px;
+    align-items:center;
+}
+@media (max-width:1000px){ .d-grid{ grid-template-columns:1fr; } }
+
+.d-copy h2{
+    margin:0 0 14px 0;
+    font-weight:800;
+    font-size:30px;
+}
+.d-copy p{ margin:.35rem 0; line-height:1.65; max-width:60ch }
+
+.d-photo{
+    overflow:hidden;
+    border-radius:6px;
+}
+.d-photo img{
+    width:100%; height:100%;
+    object-fit:cover;
+    object-position:center;
+}
