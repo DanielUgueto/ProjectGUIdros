@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="da">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title th:text="${presentation.title}">Donér</title>
+    <link rel="stylesheet" th:href="@{/css/doner.css}">
 </head>
 <body>
+<div th:replace="fragments/header :: site-header"></div>
+
+<div class="content">
+
+    <h1 th:text="${presentation.title}"></h1>
+    <p th:text="${presentation.description}"></p>
+
+    <div th:each="img : ${presentation.images}">
+        <img th:src="@{${img}}" alt="Billede" style="max-width:640px; margin-bottom:20px;">
+    </div>
+</div>
+
+<footer>
+    <div th:insert="~{fragments/footer :: site-footer}"></div>
+</footer>
 
 </body>
 </html>

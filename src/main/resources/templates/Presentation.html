@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="da">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title th:text="${presentation.title}">Titel</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
+<a th:href="@{/index}">&larr; Tilbage</a>
+<h1 th:text="${presentation.title}"></h1>
+<p th:text="${presentation.description}"></p>
 
+<div th:each="img : ${presentation.images}">
+    <img th:src="@{${img}}" alt="Billede" style="max-width:640px; margin-bottom:20px;">
+</div>
+
+<video th:if="${presentation.videoPath}" width="640" height="360" controls muted>
+    <source th:src="@{${presentation.videoPath}}" type="video/mp4"/>
+    Din browser understøtter ikke video-tagget.
+</video>
+
+<footer>
+    <h3>Links</h3>
+    <nav>
+        <a th:href="@{/index}">Start</a><br>
+        <a th:href="@{/about}">Om Mig</a><br>
+        <a th:href="@{/family}">Min Familie</a><br>
+        <a th:href="@{/hobbies}">Mine Hobbyer</a><br>
+        <a th:href="@{/pets}">Mine kæledyr</a>
+    </nav>
+</footer>
 </body>
 </html>

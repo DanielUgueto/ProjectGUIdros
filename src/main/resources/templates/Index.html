@@ -7,6 +7,7 @@
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <link rel="stylesheet" th:href="@{/css/frontPage/style.frontPage.sectionE.css}">
     <link rel="stylesheet" th:href="@{/css/sektionA.css}">
+    <link rel="stylesheet" th:href="@{/css/frontPage/sektionC.css}">
 
 </head>
 
@@ -101,52 +102,59 @@
 
 
 
-//section c daniel
-<section>
-    <div class=SektionC1>
-        <h3>Bliv en del af holdet</h3>>
-        <p>Ingen kan gøre alt, men alle kan gøre lidt.<br>
+<!-- Daniel Section C – Bliv en del af holdet -->
+<section class="volunteer">
+    <div class="volunteer__text">
+        <h3>Bliv en del af holdet</h3>
+        <p>
+            Ingen kan gøre alt, men alle kan gøre lidt.<br>
             Som frivillig er du med til at skabe<br>
-            et system,, hvor mad ikke går til<br>
-            spilde - men bliver til håb, varme<br>
+            et system, hvor mad ikke går til<br>
+            spilde – men bliver til håb, varme<br>
             og fællesskab.
         </p>
-
-        <!--    <a th:href="@{/Frivillig}">Bliv frivillig</a><br>-->
-
-    </div>
-    <div>
-        <img src="elementor-placeholder-image.png" alt="Frivillige hjælper ved et bord">
+        <a href="Doner.html" class="btn btn--primary">Bliv frivillig</a>
     </div>
 
+    <div class="volunteer__image">
+        <img src="images/frivillige.png" alt="Frivillige hjælper ved et bord">
+    </div>
 </section>
 
-    //section d daniel
+<!-- Section D – Sådan virker det -->
 <section class="how-it-works">
     <h2>Sådan Virker Det</h2>
     <p>Et simpelt koncept der gør en stor forskel</p>
+
     <div class="steps">
         <div class="step">
             <span class="number">1</span>
             <h3>Restauranten tilmelder sig</h3>
-            <p>Din restaurant modtager en FoodBoks<br>
-                    og sætter den op ved indgangen.</p>
+            <p>
+                Din restaurant modtager en FoodBoks<br>
+                og sætter den op ved indgangen.
+            </p>
         </div>
         <div class="step">
             <span class="number">2</span>
             <h3>Fyld boksen</h3>
-            <p>Læg overskudsmad i boksen i stedet for at<br>
-                smide den ud.</p>
+            <p>
+                Læg overskudsmad i boksen i stedet for at<br>
+                smide den ud.
+            </p>
         </div>
         <div class="step">
             <span class="number">3</span>
             <h3>Hjælp når det betyder mest</h3>
-            <p>Modtagere kan frit tage mad fra boksen når<br>
-                de har brug for det.</p>
+            <p>
+                Modtagere kan frit tage mad fra boksen, når<br>
+                de har brug for det.
+            </p>
         </div>
     </div>
 </section>
 
+<!-- Section E – Støt vores arbejde -->
 <section class="support">
     <div class="support__left">
         <h2>Støt vores arbejde</h2>
@@ -160,10 +168,12 @@
 
     <div class="support__right">
         <img class="support__img"
-             th:src="@{/assets/frontpage/pexels-markusspiske.jpg}"
-             alt="Demonstration med skilte" />
+             src="pexels-markusspiske.jpg"
+             alt="Demonstration med skilte">
     </div>
 </section>
+
+</body>
 
 <!-- CTA -->
 <section class="cta">
