@@ -3,9 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="${presentation.title}">'idk'</title>
-    <link rel="stylesheet" th:href="@{/style.css}">
-    <link th:href="@{/css/style.frontPage.sectionE.css}" rel="stylesheet">
-    <link th:href="@{/css/style.css}" rel="stylesheet">
 
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <link rel="stylesheet" th:href="@{/css/frontPage/style.frontPage.sectionE.css}">
@@ -16,8 +13,6 @@
 <body>
 <div th:replace="fragments/header :: site-header"></div>
 
-//section a olga
-<div>
 
 <!-- ============================ SEKTION A - Olga ============================ -->
 
@@ -34,15 +29,15 @@
     </div>
 </section>
 
-//section b olga
-<div>
 
 <!-- ---------- 2. ET MÅLTID KAN GØRE EN FORSKEL ---------- -->
 <section class="etMaaltid">
     <div class="etMaaltidIndhold">
         <div class="etMaaltidVenstre">
             <a href="/restaurant"><img src="/images/icons/SekA_TilmeldDinRestaurant.svg" alt="Tilmeld" class="MaaltidKnap"></a>
-            <a href="/laes-mere"><img src="/images/icons/SekA_LæsMere.svg" alt="Læs mere" class="MaaltidKnap"></a>
+            <a href="/om-os" class="about-btn">
+                <img src="/images/icons/SekA_LæsMere.svg" alt="Læs mere om os" class="MaaltidKnap">
+            </a>
         </div>
 
         <div class="etMaaltidHoejre">

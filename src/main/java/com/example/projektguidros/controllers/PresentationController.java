@@ -19,14 +19,13 @@ public class PresentationController {
                 List.of(),
                 null
         );
-
         model.addAttribute("presentation", presentation);
         return "index";
     }
 
-    @GetMapping("/Login")
-    public String showLoginPage() {
-        return "Login";
+        @GetMapping({"/om-os"})
+        public String showAbout() {
+            return "om-os";
+        }
 
-    }
 }
