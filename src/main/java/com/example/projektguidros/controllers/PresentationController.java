@@ -38,4 +38,9 @@ public class PresentationController {
         return "Modtager"; // Returnerer Modtager.html
     }
 
+        @GetMapping({"/Restaurant"})
+        public String showRestaurant() {
+            return "Restaurant";
+        }
+
 }
