@@ -28,4 +28,9 @@ public class PresentationController {
             return "om-os";
         }
 
+        @GetMapping({"/Restaurant"})
+        public String showRestaurant() {
+            return "Restaurant";
+        }
+
 }
