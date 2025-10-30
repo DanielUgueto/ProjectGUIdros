@@ -1,4 +1,28 @@
+@font-face{
+    font-family:"Inter";
+    /* GÅ OP FRA /css/ TIL /static/, DEREFTER IND I /fonts/ */
+    src:url("../fonts/Inter-VariableFont_opsz,wght.woff2") format("woff2-variations");
+    font-weight:100 900;
+    font-stretch:75% 125%;
+    font-style:normal;
+    font-display:swap;
+}
 
+body{
+    /* Sikrer at *alle* elementer arver Inter */
+    font-family:"Inter", sans-serif;
+    /* ... resten ... */
+}
+
+html, body {
+    /* Sikrer, at de strækker sig over hele visningsvinduet */
+    height: 100%;
+    min-height: 100vh;
+
+    /* VIGTIGT: Fjerner standard margener */
+    margin: 0;
+    padding: 0;
+}
 
 /* Base Styles */
 .navbar {
@@ -326,6 +350,181 @@
     }
 }
 
+/* ==================================== */
+/* MODTAGER SIDE STYLING (Hovedsektion) */
+/* ==================================== */
+
+.modtager-page-content {
+    /* MODTAGER farven fra din navbar: #526c47 */
+    background-color: #526c47;
+    color: #f2f2f2;
+    padding: 0; /* Fjern standard padding */
+    display: flex;
+    justify-content: center;
+}
+
+.content-wrapper {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    /* Sikrer, at de to kolonner står ved siden af hinanden */
+}
+
+/* Venstre kolonne (Tekst) */
+.text-column {
+    padding: 40px 30px;
+    /* Fyld kun den nødvendige plads, eller sæt en fast bredde, f.eks.: */
+    flex: 0 0 40%;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    opacity: 0.8;
+}
+
+/* Download knap (lysegrøn fra billedet) */
+.download-button {
+    background-color: #c0d8b4; /* Meget lys grøn/creme farve */
+    color: #526c47;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 40px;
+    transition: background-color 0.3s;
+}
+
+.download-button:hover {
+    background-color: #a8c199;
+}
+
+/* Sektion: Sådan virker det: */
+.how-it-works h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.how-it-works ol {
+    list-style: none; /* Fjerner standard tal */
+    counter-reset: custom-counter;
+    margin-bottom: 30px;
+}
+
+.how-it-works li {
+    counter-increment: custom-counter;
+    padding-left: 30px;
+    position: relative;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.how-it-works li::before {
+    content: counter(custom-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #f2f2f2; /* Lyse tal i cirkler */
+    color: #526c47;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Citat Boks */
+.quote-box {
+    border-left: 3px solid #f2f2f2;
+    padding-left: 15px;
+    margin: 30px 0;
+    font-style: italic;
+}
+
+.quote-box footer {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* Liste med bullets */
+.bullet-list {
+    list-style: none; /* Fjerner standard bullets */
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+.bullet-list li {
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.bullet-list li::before {
+    content: '•'; /* Brug en diskret prik eller et Font Awesome ikon */
+    position: absolute;
+    left: 0;
+    color: #f4cbb3; /* Lys accentfarve for bullets */
+    font-weight: bold;
+}
+
+/* QR Code Box */
+.qr-code-box {
+    /* Justér denne styling, hvis du bruger et <img> tag */
+    width: 150px;
+    height: 150px;
+    /* baggrund-billede til QR-kode, hvis du bruger CSS */
+    /* background-color: white; */
+}
+
+
+/* Højre kolonne (Billede) */
+.image-column {
+    flex: 1; /* Fylder den resterende plads */
+    background-size: cover;
+    background-position: center;
+    min-height: 500px; /* Sørg for at billedet er højt nok */
+}
+
+/* Nederste sektion (skiltet) */
+.bottom-section {
+    background-color: #f7f3ed; /* Lys, off-white baggrund */
+    display: flex;
+    justify-content: center;
+}
+
+.skilt-box {
+    /* Dette er bare en container til skiltet */
+    /* Justér bredde/højde/margen efter dit faktiske skilt-billede */
+    height: 300px;
+}
+
+
+/* Responsivitet for små skærme */
+@media (max-width: 900px) {
+    .content-wrapper {
+        flex-direction: column; /* Stak kolonnerne vertikalt på små skærme */
+    }
+
+    .text-column {
+        flex: 1;
+        padding-bottom: 20px;
+    }
+
+    .image-column {
+        min-height: 300px; /* Gør billedet mindre på mobil */
+    }
+}
 
 
 
