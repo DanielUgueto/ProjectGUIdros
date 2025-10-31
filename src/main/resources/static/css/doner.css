@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-/* ===========================================
-   DONER.CSS — Perfect visual match to Section A (final version)
-   =========================================== */
-
 /* #edcdb6 pink */
 /* #576b4b dark green */
 /* #ba5357 red */
@@ -11,47 +6,23 @@
 /* #727a43 light green */
 /* #1c353b hoover blue */
 
-=======
-/* #edcdb6 pink */
-/* #576b4b dark green */
-/* #ba5357 red */
-/* #36575f light blue */
-/* #36575f dark blue */
-/* #727a43 light green */
-/* #1c353b hoover blue */
-
->>>>>>> javascript-test-1
 html, body {
     margin: 0;
     padding: 0;
 }
 
-<<<<<<< HEAD
-/* Prevent elements from extending beyond the viewport */
-=======
 
->>>>>>> javascript-test-1
 * {
     box-sizing: border-box;
 }
 
-<<<<<<< HEAD
-/* Fix hero section and navbar exact width */
-=======
->>>>>>> javascript-test-1
 body, header, .navbar, .hero-doner {
     width: 100%;
     max-width: 100%;
 }
 
-<<<<<<< HEAD
-/* Eliminate rounding errors that can cause horizontal scroll */
-body {
-    overflow-x: clip; /* better than hidden: it removes the cause, not hides it */
-=======
 body {
     overflow-x: clip;
->>>>>>> javascript-test-1
 }
 
 
@@ -128,11 +99,7 @@ body {
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-<<<<<<< HEAD
-/* ===== HERO FADE-IN ANIMATION ===== */
-=======
 /* Fadein JS */
->>>>>>> javascript-test-1
 @keyframes fadeInHero {
     from {
         opacity: 0;
@@ -142,11 +109,7 @@ body {
     }
 }
 
-<<<<<<< HEAD
-/* ===== BUTTON ===== */
-=======
 /* Button */
->>>>>>> javascript-test-1
 .btn {
     display: inline-block;
     padding: 0.9rem 2.2rem;
@@ -165,11 +128,7 @@ body {
     transform: translateY(-2px);
 }
 
-<<<<<<< HEAD
-/* ===== INFO SECTION ===== */
-=======
 /* Info sektion */
->>>>>>> javascript-test-1
 .info-doner {
     background-color: #4A8290;
     text-align: center;
@@ -191,11 +150,7 @@ body {
     line-height: 1.7;
 }
 
-<<<<<<< HEAD
-/* ===== HOW IT WORKS SECTION (scroll fade-in) ===== */
-=======
 /* HOW-IT-WORKS */
->>>>>>> javascript-test-1
 .how-it-works {
     position: relative;
     background: url("/images/vol2.jpg") center center / cover no-repeat;
@@ -245,11 +200,7 @@ body {
 }
 
 
-<<<<<<< HEAD
-/* Fade-in animation */
-=======
 /* Fadein animation */
->>>>>>> javascript-test-1
 @keyframes fadeInSection {
     from {
         opacity: 0;
@@ -287,11 +238,7 @@ body {
     font-size: 0.95rem;
 }
 
-<<<<<<< HEAD
-/* ===== CTA SECTION ===== */
-=======
 /* cta */
->>>>>>> javascript-test-1
 .cta-doner {
     background-color: #727a43;
     color: #fff;
@@ -327,11 +274,7 @@ body {
     color: #fff;
 }
 
-<<<<<<< HEAD
-/* ===== RESPONSIVE ===== */
-=======
 /* Responsive */
->>>>>>> javascript-test-1
 @media (max-width: 900px) {
     .hero-doner {
         height: 70vh;
@@ -355,11 +298,7 @@ body {
     }
 }
 
-<<<<<<< HEAD
-/* ===== Floating Back Button ===== */
-=======
 /* tilbage knap */
->>>>>>> javascript-test-1
 .back-button {
     position: fixed;
     bottom: 2rem;
@@ -377,18 +316,10 @@ body {
     z-index: 1000;
 }
 
-<<<<<<< HEAD
-/* When visible, slide in smoothly */
-=======
->>>>>>> javascript-test-1
 .back-button.visible {
     right: 66rem;
 }
 
-<<<<<<< HEAD
-/* Hover effect */
-=======
->>>>>>> javascript-test-1
 .back-button:hover {
     background-color: #2f452d;
     transform: translateX(-3px);
