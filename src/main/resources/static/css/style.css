@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 @font-face{
     font-family:"Inter";
     /* GÅ OP FRA /css/ TIL /static/, DEREFTER IND I /fonts/ */
@@ -24,7 +24,7 @@ html, body {
     margin: 0;
     padding: 0;
 }
-=======
+
 /* ==================================== */
 /* BASE STYLES AND NAVBAR               */
 /* ==================================== */
@@ -38,7 +38,6 @@ body {
 /* ==================================== */
 /* NAVBAR STYLING — Clean, No Overlap Hover Effect */
 /* ==================================== */
->>>>>>> javascript-test-1
 
 .navbar {
     background-color: #1b4a52;
@@ -405,7 +404,6 @@ body {
     }
 }
 
-<<<<<<< HEAD
 /* ==================================== */
 /* MODTAGER SIDE STYLING (Hovedsektion) */
 /* ==================================== */
@@ -580,24 +578,24 @@ body {
     .image-column {
         min-height: 300px; /* Gør billedet mindre på mobil */
     }
-=======
+
 .heroBillede {
     position: relative;
     overflow: hidden;
->>>>>>> javascript-test-1
 }
 
-.hero-darkener {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0); /* starts bright */
-    pointer-events: none;
-    z-index: 2;
-    will-change: background;
-}
+    .hero-darkener {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0); /* starts bright */
+        pointer-events: none;
+        z-index: 2;
+        will-change: background;
+    }
 
-.heroTekst {
-    position: relative;
-    z-index: 3; /* stays above the darkener */
+    .heroTekst {
+        position: relative;
+        z-index: 3; /* stays above the darkener */
+    }
 }
 
