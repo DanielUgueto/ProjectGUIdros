@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="da">
 <head>
     <meta charset="UTF-8">
-    <title th:text="${presentation.title}">Frivillig</title>
+    <title>Frivillig</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <link rel="stylesheet" th:href="@{/css/frivillig.css}">
 </head>
@@ -12,7 +12,6 @@
     <div th:replace="fragments/header :: site-header"></div>
 </header>
 
-<!-- HERO SEKTION -->
 <section class="hero-frivillig">
     <div class="hero-overlay">
         <div class="hero-text">
@@ -26,7 +25,6 @@
     </div>
 </section>
 
-<!-- INFO SEKTION -->
 <section class="info-frivillig">
     <h2>Din indsats betyder noget</h2>
     <p>
@@ -36,7 +34,6 @@
     </p>
 </section>
 
-<!-- SÅDAN VIRKER DET -->
 <section class="how-it-works fade-in-on-scroll">
     <h2>Sådan bliver du frivillig</h2>
     <p>Det tager kun få minutter at blive en del af fællesskabet</p>
@@ -57,14 +54,12 @@
     </div>
 </section>
 
-<!-- CTA SEKTION -->
 <section class="cta-frivillig">
     <h2>Klar til at blive frivillig?</h2>
     <p>Bliv en del af FoodBoks-fællesskabet og vær med til at skabe værdi af overskud.</p>
     <button>Tilmeld dig nu</button>
 </section>
 
-<!-- FOOTER -->
 <footer>
     <div th:insert="~{fragments/footer :: site-footer}"></div>
 </footer>

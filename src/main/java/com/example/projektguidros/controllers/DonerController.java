@@ -17,7 +17,7 @@ public class DonerController {
                 "Donér",
                 "Hjælp os med at redde madspild og støtte de udsatte.",
                 List.of("/images/friv1.jpg", "/images/friv2.jpg"),
-                null // last argument, if not used
+                null
         );
 
         model.addAttribute("presentation", presentation);
