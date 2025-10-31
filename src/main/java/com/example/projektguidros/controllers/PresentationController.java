@@ -23,9 +23,24 @@ public class PresentationController {
         return "index";
     }
 
-        @GetMapping({"/om-os"})
-        public String showAbout() {
-            return "om-os";
+    @GetMapping({"/om-os"})
+    public String showAbout() {
+        return "om-os";
+    }
+
+    @GetMapping({"/Login"})
+    public String ShowLogin() {
+        return "Login";
+    }
+
+    @GetMapping("/Modtager")
+    public String showModtagerPage() {
+        return "Modtager"; // Returnerer Modtager.html
+    }
+
+        @GetMapping({"/Restaurant"})
+        public String showRestaurant() {
+            return "Restaurant";
         }
 
 }

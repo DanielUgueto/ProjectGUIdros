@@ -1,10 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Modtager - Find et måltid nær dig</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 
+<div th:insert="~{fragments/header :: site-header}"></div>
+
+<main class="modtager-page-content">
+
+    <div class="content-wrapper">
+
+        <div class="text-column">
+            <h1 class="main-title">Find et måltid nær dig</h1>
+            <p class="subtitle">Gratis og trygt</p>
+
+            <button class="download-button">Download appen</button>
+
+            <div class="how-it-works">
+                <h2>Sådan virker det:</h2>
+                <ol>
+                    <li>Find mad via appen</li>
+                    <li>Reserver en boks</li>
+                    <li>Åbn og hent maden</li>
+                </ol>
+            </div>
+
+            <blockquote class="quote-box">
+                <p>"Det gør en kæmpe forskel for mig at kunne hente mad, når jeg har brug for det - uden spørgsmål eller kø."</p>
+                <footer>- Anders, madmodtager</footer>
+            </blockquote>
+
+            <ul class="bullet-list">
+                <li>Alt er gratis</li>
+                <li>Maden er frisk og god</li>
+                <li>Du vælger selv tid og sted</li>
+            </ul>
+
+            <div class="qr-code-box">
+            </div>
+
+        </div>
+
+        <div class="image-column" th:style="'background-image: url(' + @{/images/modtager-side-billede.jpg} + ');'">
+        </div>
+
+    </div>
+
+</main>
+
+<section class="bottom-section">
+    <div class="image-column" th:style="|background-image: url('@{/images/foodboksLangtBillede.jpg}');|">
+    </div>
+</section>
+
+<div th:insert="~{fragments/footer :: site-footer}"></div>
 </body>
 </html>

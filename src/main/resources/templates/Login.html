@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="da" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FoodBoks Login</title>
-    <link rel="stylesheet" href="css/style.css">
-    <div th:replace="fragments/header :: site-header"></div>
-
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body class="login-page">
+
+<div th:insert="~{fragments/header :: site-header}"></div>
 
 <div class="login-container">
     <div class="login-card">
@@ -36,6 +36,7 @@
         <p class="signup-text">Har du ingen konto? <a href="#">Opret en ny bruger her</a></p>
     </div>
 </div>
-<footer th:replace="fragments/footer :: footer"></footer>
+<div th:insert="~{fragments/footer :: site-footer}"></div>
+
 </body>
 </html>

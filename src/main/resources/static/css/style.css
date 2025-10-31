@@ -1,43 +1,50 @@
-/* ==================================== */
-/* BASE STYLES AND NAVBAR               */
-/* ==================================== */
-
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    color: #fff;
+@font-face{
+    font-family:"Inter";
+    /* GÅ OP FRA /css/ TIL /static/, DEREFTER IND I /fonts/ */
+    src:url("../fonts/Inter-VariableFont_opsz,wght.woff2") format("woff2-variations");
+    font-weight:100 900;
+    font-stretch:75% 125%;
+    font-style:normal;
+    font-display:swap;
 }
 
-/* ==================================== */
-/* NAVBAR STYLING — Clean, No Overlap Hover Effect */
-/* ==================================== */
+body{
+    /* Sikrer at *alle* elementer arver Inter */
+    font-family:"Inter", sans-serif;
+    /* ... resten ... */
+}
 
-.navbar {
-    background-color: #1b4a52;
+html, body {
+    /* Sikrer, at de strækker sig over hele visningsvinduet */
+    height: 100%;
+    min-height: 100vh;
+
+    /* VIGTIGT: Fjerner standard margener */
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    position: relative;
-    z-index: 1000;
+}
+
+/* Base Styles */
+.navbar {
+    background-color: #1b4a52; /* Main dark background */
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
-    margin: 0;
-    padding: 0;
+    /* ... other list styles ... */
 }
 
 .navbar li {
     flex: 1;
-    display: flex;
-    flex-direction: column;
+    display: flex; /* Makes the content inside li flexible */
+    flex-direction: column; /* Stacks the content (color block and link) vertically */
     text-align: center;
-    position: relative;
 }
 
+/* 1. The Top Color Block Row */
 .color-block {
-    height: 20px;
+    height: 20px; /* Adjust height to match image's top block */
 }
 
 .forside .color-block { background-color: #f4cbb3; }
@@ -47,158 +54,117 @@ body {
 .doner .color-block { background-color: #707a3a; }
 .om-os .color-block { background-color: #FFF6F1; }
 
-/* Base link style */
+
+/* 2. The Bottom Link Row */
 .navbar a {
+    /* The link needs its own distinct background color */
     background-color: #1b4a52;
-    display: inline-block;
+    display: block;
     padding: 15px 0;
     text-decoration: none;
     color: #f2f2f2;
     font-weight: bold;
     letter-spacing: 1px;
-    position: relative;
-    transition: color 0.3s ease;
-}
 
-/* New elegant underline animation */
-.navbar a::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%) scaleX(0);
-    transform-origin: center;
-    width: 60%;
-    height: 3px;
-    background: #ffffff;
-    transition: transform 0.3s ease;
-}
-
-/* Hover: underline expands, no movement */
-.navbar a:hover::after {
-    transform: translateX(-50%) scaleX(1);
-}
-
-/* Hover text glow */
-.navbar a:hover {
-    color: #ffffff;
-    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Section-color hover tints */
-.forside a:hover {
-    color: #1b4a52;
-    text-shadow: 0 0 8px rgba(244, 203, 179, 0.6);
-    background-color: #f4cbb3;
-}
-
-.modtager a:hover {
-    background-color: #526c47;
-}
-
-.frivillig a:hover {
-    background-color: #c94b54;
-}
-
-.restaurant a:hover {
-    background-color: #2a5860;
-}
-
-.doner a:hover {
-    background-color: #707a3a;
-}
-
-.om-os a:hover {
-    background-color: #FFF6F1;
-    color: #1b4a52;
-}
-
-/* Red underline for OM OS only */
-.om-os a::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%) scaleX(0);
-    transform-origin: center;
-    width: 60%;
-    height: 3px;
-    background: #1b4a52; /* red underline color */
-    transition: transform 0.3s ease;
-}
-
-.om-os a:hover::after {
-    transform: translateX(-50%) scaleX(1);
-}
-
-
-
-/* Remove old right-hand separators */
-.navbar li:not(:last-child) {
+    /* Remove the conflicting border properties from your original CSS */
     border-right: none;
+    border-left: none;
+
+    /* Underline/Highlight Effect: Use a box-shadow or border-bottom */
+    /* I'll use border-bottom to simulate the line under the active/default link */
+    border-bottom: 3px solid transparent; /* default state */
+    transition: background 0.3s ease, border-bottom 0.3s ease;
+}
+
+/* Specific styling for the first element (FORSIDE) to match the image */
+/* It has a lighter background and a dark underline */
+.forside {
+    /* Set the background for the entire list item for the bottom section */
+
+}
+
+.forside a {
+    color: #f2f2f2; /* Dark text on light background */
+    background-color: transparent; /* Inherit the list item's background */
+    border-bottom-color: #1b4a52; /* Dark underline for the active link */
 }
 
 
-/* ==================================== */
-/* FOOTER STYLING                       */
-/* ==================================== */
+/* Separator Lines (the vertical bars) - using :after or a border */
+.navbar li:not(:last-child) {
+    border-right: 1px solid rgba(255, 255, 255, 0.4); /* Light separator line */
+}
+
+/* Hover effect */
+.navbar a:hover {
+    /* Example: Darker background on hover for the non-forside links */
+    background-color: #12343a;
+    border-bottom-color: #f2f2f2; /* Light underline on hover */
+}
+
+/* --- Footer Styling --- */
 
 .site-footer {
-    background-color: #1b4a52;
-    color: #f2f2f2;
-    padding: 50px 0 0;
+    background-color: #1b4a52; /* Den mørke baggrundsfarve */
+    color: #f2f2f2; /* Lys tekstfarve */
+    padding: 50px 0 0; /* Større padding i toppen, mindre i bunden */
 }
 
 .footer-container {
-    max-width: 1200px;
+    max-width: 1200px; /* Centrerer indholdet som din navbar */
     margin: 0 auto;
-    padding: 0 20px 50px;
+    padding: 0 20px 50px; /* Sørger for padding i siderne og bunden */
     display: grid;
+    /* Definerer 4 kolonner, de to midterste er smallere end de yderste */
     grid-template-columns: 2fr 1.5fr 1.5fr 2fr;
-    gap: 40px;
+    gap: 40px; /* Mellemrum mellem kolonnerne */
 }
 
+/* Kolonne Headers */
 .site-footer h3 {
     color: #f2f2f2;
     font-size: 1.25rem;
     margin-bottom: 20px;
-    font-weight: bold;
+    font-weight: bold; /* Sørger for at overskriften er fed */
 }
 
+/* Afsnitstekst */
 .footer-about p,
 .footer-contact p {
     font-size: 0.95rem;
     line-height: 1.6;
-    margin-bottom: 8px;
-    color: #d2f1f9;
+    margin-bottom: 8px; /* Lidt plads mellem kontaktlinjerne */
 }
 
+
+/* Quick Links (Bliv aktiv) */
 .footer-links ul {
     list-style: none;
 }
 
 .footer-links a {
-    color: #d2f1f9;
+    color: #f2f2f2;
     text-decoration: none;
     font-size: 0.95rem;
-    display: block;
+    display: block; /* Gør links til blok-elementer for at give dem plads */
     padding: 4px 0;
     transition: color 0.3s;
 }
 
 .footer-links a:hover {
-    color: #e9f8fc;
+    color: #a8a8a8; /* Lidt lysere farve ved hover */
     text-decoration: underline;
 }
 
+/* Social Media Icons (Følg os) */
 .social-icons {
     display: flex;
-    gap: 15px;
+    gap: 15px; /* Mellemrum mellem ikonerne */
 }
 
 .social-icons a {
     color: #f2f2f2;
-    font-size: 1.7rem;
+    font-size: 1.7rem; /* Stor størrelse som i billedet */
     transition: color 0.3s;
 }
 
@@ -206,6 +172,7 @@ body {
     color: #d1d1d1;
 }
 
+/* Kontakt links */
 .footer-contact a {
     color: #f2f2f2;
     text-decoration: none;
@@ -216,53 +183,54 @@ body {
     text-decoration: underline;
 }
 
+/* Den mørke bundlinje (under footeren) */
 .footer-bottom-bar {
-    height: 10px;
-    background-color: #222;
+    height: 10px; /* Tykkelsen på den mørke stribe */
+    background-color: #222; /* En meget mørk grå/sort farve */
     width: 100%;
 }
 
-.footer-contact a[href^="mailto:"] {
-    color: #d2f1f9;
-}
-
-.footer-contact a[href^="mailto:"]:hover {
-    color: #e9f8fc;
-}
-
-.footer-contact a[href^="tel:"] {
-    color: #d2f1f9;
-    /*text-decoration: none;*/
-    /*transition: color 0.3s ease;*/
-}
-
-.footer-contact a[href^="tel:"]:hover {
-    color: #e9f8fc;
-}
-
-
-/* Responsive Footer */
+/* Responsivitet for mindre skærme */
 @media (max-width: 768px) {
     .footer-container {
+        /* Skifter til en enkelt kolonne på små skærme */
         grid-template-columns: 1fr;
-        padding: 0 40px 40px;
+        padding: 0 40px 40px; /* Mere padding på siderne for at give luft */
     }
+
     .footer-column {
-        margin-bottom: 30px;
+        margin-bottom: 30px; /* Plads mellem sektionerne, når de er stablet */
     }
+
+
+}
+
+/* Fjern standard spacing på nav-listen */
+.navbar ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Sørg for at margin ikke kan kollapse udenfor navbaren */
+.navbar {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* stopper margin-collapse */
 }
 
 /* ==================================== */
 /* LOGIN PAGE STYLING                   */
 /* ==================================== */
 
+/* Sørger for, at siden fylder hele højden og centrerer indholdet */
 .login-page {
-    background-color: #f7f3ed;
+    background-color: #f7f3ed; /* Lys baggrund for at efterligne 'FORSIDE' sektionen */
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stak elementer vertikalt */
     min-height: 100vh;
 }
 
+/* Simulerer den mørke topbar fra din navigation */
 .login-header-bar {
     background-color: #1b4a52;
     height: 40px;
@@ -270,21 +238,22 @@ body {
 }
 
 .login-container {
-    flex-grow: 1;
+    flex-grow: 1; /* Fylder det resterende rum */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Centrer vandret */
+    align-items: center; /* Centrer lodret */
     padding: 40px 20px;
 }
 
+/* Det centrale Login Kort (Card) */
 .login-card {
-    background-color: #526c47;
+    background-color: #526c47; /* MODTAGER farven som baggrund for kortet */
     color: #f2f2f2;
     padding: 40px;
-    border-radius: 8px;
+    border-radius: 8px; /* Lidt afrundede hjørner */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
+    max-width: 400px; /* Begrænser bredden */
 }
 
 .card-title {
@@ -299,6 +268,7 @@ body {
     opacity: 0.8;
 }
 
+/* Formular elementer */
 .form-group {
     margin-bottom: 20px;
 }
@@ -315,7 +285,7 @@ body {
     padding: 12px;
     border: none;
     border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.9); /* Lidt gennemsigtig hvid */
     color: #1b4a52;
     font-size: 1rem;
     transition: background-color 0.3s;
@@ -323,13 +293,14 @@ body {
 
 .form-group input:focus {
     background-color: white;
-    outline: 2px solid #c94b54;
+    outline: 2px solid #c94b54; /* Rød accentfarve ved fokus */
 }
 
+/* Login Knap (Button) */
 .login-button {
     width: 100%;
     padding: 15px;
-    background-color: #c94b54;
+    background-color: #c94b54; /* FRIVILLIG farven som knap-accent */
     color: white;
     font-weight: bold;
     font-size: 1.1rem;
@@ -344,19 +315,20 @@ body {
     background-color: #a83d46;
 }
 
+/* Links */
 .forgot-password,
 .signup-text a {
-    color: #f4cbb3;
+    color: #f4cbb3; /* En lys farve fra dit palette */
     text-decoration: none;
     font-size: 0.9rem;
-    display: block;
+    display: block; /* Giver det plads */
     margin-bottom: 15px;
     transition: color 0.3s;
 }
 
 .forgot-password {
     text-align: right;
-    margin-top: -10px;
+    margin-top: -10px; /* Justerer positionen */
 }
 
 .signup-text {
@@ -371,28 +343,189 @@ body {
     text-decoration: underline;
 }
 
+/* Responsivitet for små skærme */
 @media (max-width: 450px) {
     .login-card {
         padding: 30px 20px;
     }
 }
 
-.heroBillede {
-    position: relative;
-    overflow: hidden;
+/* ==================================== */
+/* MODTAGER SIDE STYLING (Hovedsektion) */
+/* ==================================== */
+
+.modtager-page-content {
+    /* MODTAGER farven fra din navbar: #526c47 */
+    background-color: #526c47;
+    color: #f2f2f2;
+    padding: 0; /* Fjern standard padding */
+    display: flex;
+    justify-content: center;
 }
 
-.hero-darkener {
+.content-wrapper {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    /* Sikrer, at de to kolonner står ved siden af hinanden */
+}
+
+/* Venstre kolonne (Tekst) */
+.text-column {
+    padding: 40px 30px;
+    /* Fyld kun den nødvendige plads, eller sæt en fast bredde, f.eks.: */
+    flex: 0 0 40%;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    opacity: 0.8;
+}
+
+/* Download knap (lysegrøn fra billedet) */
+.download-button {
+    background-color: #c0d8b4; /* Meget lys grøn/creme farve */
+    color: #526c47;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 40px;
+    transition: background-color 0.3s;
+}
+
+.download-button:hover {
+    background-color: #a8c199;
+}
+
+/* Sektion: Sådan virker det: */
+.how-it-works h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.how-it-works ol {
+    list-style: none; /* Fjerner standard tal */
+    counter-reset: custom-counter;
+    margin-bottom: 30px;
+}
+
+.how-it-works li {
+    counter-increment: custom-counter;
+    padding-left: 30px;
+    position: relative;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.how-it-works li::before {
+    content: counter(custom-counter);
     position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0); /* starts bright */
-    pointer-events: none;
-    z-index: 2;
-    will-change: background;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #f2f2f2; /* Lyse tal i cirkler */
+    color: #526c47;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
 }
 
-.heroTekst {
-    position: relative;
-    z-index: 3; /* stays above the darkener */
+/* Citat Boks */
+.quote-box {
+    border-left: 3px solid #f2f2f2;
+    padding-left: 15px;
+    margin: 30px 0;
+    font-style: italic;
 }
+
+.quote-box footer {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* Liste med bullets */
+.bullet-list {
+    list-style: none; /* Fjerner standard bullets */
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+.bullet-list li {
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.bullet-list li::before {
+    content: '•'; /* Brug en diskret prik eller et Font Awesome ikon */
+    position: absolute;
+    left: 0;
+    color: #f4cbb3; /* Lys accentfarve for bullets */
+    font-weight: bold;
+}
+
+/* QR Code Box */
+.qr-code-box {
+    /* Justér denne styling, hvis du bruger et <img> tag */
+    width: 150px;
+    height: 150px;
+    /* baggrund-billede til QR-kode, hvis du bruger CSS */
+    /* background-color: white; */
+}
+
+
+/* Højre kolonne (Billede) */
+.image-column {
+    flex: 1; /* Fylder den resterende plads */
+    background-size: cover;
+    background-position: center;
+    min-height: 500px; /* Sørg for at billedet er højt nok */
+}
+
+/* Nederste sektion (skiltet) */
+.bottom-section {
+    background-color: #f7f3ed; /* Lys, off-white baggrund */
+    display: flex;
+    justify-content: center;
+}
+
+.skilt-box {
+    /* Dette er bare en container til skiltet */
+    /* Justér bredde/højde/margen efter dit faktiske skilt-billede */
+    height: 300px;
+}
+
+
+/* Responsivitet for små skærme */
+@media (max-width: 900px) {
+    .content-wrapper {
+        flex-direction: column; /* Stak kolonnerne vertikalt på små skærme */
+    }
+
+    .text-column {
+        flex: 1;
+        padding-bottom: 20px;
+    }
+
+    .image-column {
+        min-height: 300px; /* Gør billedet mindre på mobil */
+    }
+}
+
+
+
 

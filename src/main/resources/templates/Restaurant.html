@@ -1,10 +1,231 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="da" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Restaurant | FoodBoks</title>
 
+    <style th:inline="css">
+        @font-face {
+            font-family: "Inter";
+            src: url('@{/fonts/Inter-VariableFont_opsz,wght.woff2}') format('woff2');
+            font-weight: 100 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+        }
+
+        main > :first-child {
+            margin-top: 0;
+        }
+    </style>
+
+
+    <!-- Global styles -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/restaurant.css}">
+
+</head>
+
+<body class="restaurant">
+
+<!-- Header -->
+<div th:replace="fragments/header :: site-header"></div>
+
+<main id="restaurant">
+
+    <!-- ================= SECTION A ================= -->
+    <section class="rest-hero">
+        <div class="hero-wrap">
+
+            <!-- Billede på højre side -->
+            <img class="hero-img"
+                 th:src="@{/images/restaurantBillede2.jpg}"
+                 alt="Restaurant hero">
+
+            <!-- Overlay-boks på venstre side -->
+            <div class="hero-overlay">
+                <h2 class="hero-title">
+                    Gør <br>
+                    <span class="hero-title--em">bæredygtighed</span><br>
+                    til en del af din<br>
+                    menu
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SECTION B ================= -->
+    <section class="rest-info">
+        <div class="rest-info-content">
+            <h3>Bæredygtighed starter i køkkenet.</h3>
+
+            <p>
+                Når din restaurant samarbejder med os, bliver din overskydende mad til måltider i stedet for affald.
+                Vi gør det nemt at tage ansvar: Du får adgang til vores system, placerer overskydende mad i boksen,
+                og maden når direkte ud til mennesker, der mangler et måltid.
+            </p>
+
+            <p>
+                Din indsats er mere end et socialt bidrag – den reducerer CO₂, styrker dit brand og viser,
+                at din restaurant tager del i den grønne omstilling. Sammen bygger vi et bæredygtigt fællesskab,
+                hvor intet går til spilde.
+            </p>
+
+            <div class="rest-btn-svg">
+                <img th:src="@{/images/icons/blivEnDelAfLoesningen.svg}" alt="Bliv en del af løsningen knap">
+            </div>
+        </div>
+    </section>
+
+    <div class="rest-media">
+        <img th:src="@{/images/groentsager.jpg}" alt="Friske grøntsager">
+    </div>
+
+    <!-- ================= SECTION C ================= -->
+
+    <section class="rest-2kolonne">
+        <div class="rest-2kolonne-wrap">
+            <div class="rest-2kolonne-item">
+                <p>
+                    I Danmark bliver der hvert år smidt over 800.000 ton mad ud – meget af det kunne have været spist.
+                    Ved at blive en del af ordningen viser din restaurant, at I tager stilling og handler.
+                </p>
+            </div>
+
+            <div class="rest-2kolonne-divider"></div>
+
+            <div class="rest-2kolonne-item">
+                <p>
+                    Det er nemt at tale om bæredygtighed – men endnu bedre at gøre noget ved det.
+                    Som partner er du med til at reducere madspild, spare CO₂ og hjælpe mennesker i din egen by.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= SECTION D ================= -->
+    <section class="how-it-works">
+        <h2>Sådan Virker Det</h2>
+        <p>Et simpelt koncept der gør en stor forskel</p>
+
+        <div class="steps">
+            <div class="step">
+                <span class="number">1</span>
+                <h3>Restauranten tilmelder sig</h3>
+                <p>
+                    Din restaurant modtager en FoodBoks<br>
+                    og sætter den op ved indgangen.
+                </p>
+            </div>
+            <div class="step">
+                <span class="number">2</span>
+                <h3>Fyld boksen</h3>
+                <p>
+                    Læg overskudsmad i boksen i stedet for at<br>
+                    smide den ud.
+                </p>
+            </div>
+            <div class="step">
+                <span class="number">3</span>
+                <h3>Hjælp når det betyder mest</h3>
+                <p>
+                    Modtagere kan frit tage mad fra boksen, når<br>
+                    de har brug for det.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SECTION E ================= -->
+    <section class="salad">
+        <img th:src="@{/images/saladPlate.jpg}" alt="Tallerken med salat">
+    </section>
+
+
+    <!-- ================= SECTION F ================= -->
+    <section class="map-section">
+        <div class="map-wrap">
+
+            <!-- Venstre: Billede -->
+            <div class="map-img">
+                <img th:src="@{/images/dk-map.jpg}" alt="Danmarkskort">
+            </div>
+
+            <!-- Højre: Tekst og knap -->
+            <div class="map-content">
+
+                <div class="map-header">
+                    <h2>
+                        Sæt din restaurant<br>
+                        på bæredygtighedskortet
+                    </h2>
+                    <div class="map-btn">
+                        <img th:src="@{/images/icons/TilmeldRestaurant.svg}" alt="Tilmeld restaurant">
+                    </div>
+                </div>
+
+                <div class="map-body">
+                    <p>
+                        Siden opstarten har over 120 restauranter allerede tilmeldt sig ordningen.<br>
+                        Sammen har de:
+                    </p>
+                    <ul>
+                        <li>Reddet over 12.500 måltider fra at gå til spilde</li>
+                        <li>Sparet mere end 3,5 ton CO₂</li>
+                        <li>Skabt varme måltider til mennesker i deres lokalområde</li>
+                    </ul>
+                    <p>
+                        Det handler ikke om store forandringer i hverdagen – kun om at bruge den mad, du allerede har.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= SECTION G ================= -->
+    <section class="rest-citat">
+        <div class="rest-citat-wrap">
+
+            <div class="rest-citat-item">
+                <p class="rest-citat-tekst">
+                    “Før smed vi 5–10 portioner ud hver aften. <br>
+                    Nu bliver de til måltider for mennesker i stedet – <br>
+                    og vores gæster elsker, at vi er med.”
+                </p>
+                <p class="rest-citat-navn">– Mikkel, ejer af GreenFork Café</p>
+            </div>
+
+            <div class="rest-citat-item">
+                <p class="rest-citat-tekst">
+                    “Det tager os kun et par minutter om dagen, men <br>
+                    det giver mening for hele holdet.”
+                </p>
+                <p class="rest-citat-navn">– Sara, køkkenchef, Bistro Nord</p>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+</main>
+
+<!-- Footer -->
+<footer>
+    <div th:insert="~{fragments/footer :: site-footer}"></div>
+</footer>
 </body>
 </html>
