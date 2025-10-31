@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @font-face{
     font-family:"Inter";
     /* GÅ OP FRA /css/ TIL /static/, DEREFTER IND I /fonts/ */
@@ -23,28 +24,48 @@ html, body {
     margin: 0;
     padding: 0;
 }
+=======
+/* ==================================== */
+/* BASE STYLES AND NAVBAR               */
+/* ==================================== */
 
-/* Base Styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: #fff;
+}
+
+/* ==================================== */
+/* NAVBAR STYLING — Clean, No Overlap Hover Effect */
+/* ==================================== */
+>>>>>>> javascript-test-1
+
 .navbar {
-    background-color: #1b4a52; /* Main dark background */
+    background-color: #1b4a52;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 1000;
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
-    /* ... other list styles ... */
+    margin: 0;
+    padding: 0;
 }
 
 .navbar li {
     flex: 1;
-    display: flex; /* Makes the content inside li flexible */
-    flex-direction: column; /* Stacks the content (color block and link) vertically */
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    position: relative;
 }
 
-/* 1. The Top Color Block Row */
 .color-block {
-    height: 20px; /* Adjust height to match image's top block */
+    height: 20px;
 }
 
 .forside .color-block { background-color: #f4cbb3; }
@@ -54,117 +75,158 @@ html, body {
 .doner .color-block { background-color: #707a3a; }
 .om-os .color-block { background-color: #FFF6F1; }
 
-
-/* 2. The Bottom Link Row */
+/* Base link style */
 .navbar a {
-    /* The link needs its own distinct background color */
     background-color: #1b4a52;
-    display: block;
+    display: inline-block;
     padding: 15px 0;
     text-decoration: none;
     color: #f2f2f2;
     font-weight: bold;
     letter-spacing: 1px;
-
-    /* Remove the conflicting border properties from your original CSS */
-    border-right: none;
-    border-left: none;
-
-    /* Underline/Highlight Effect: Use a box-shadow or border-bottom */
-    /* I'll use border-bottom to simulate the line under the active/default link */
-    border-bottom: 3px solid transparent; /* default state */
-    transition: background 0.3s ease, border-bottom 0.3s ease;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
-/* Specific styling for the first element (FORSIDE) to match the image */
-/* It has a lighter background and a dark underline */
-.forside {
-    /* Set the background for the entire list item for the bottom section */
-
+/* New elegant underline animation */
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    width: 60%;
+    height: 3px;
+    background: #ffffff;
+    transition: transform 0.3s ease;
 }
 
-.forside a {
-    color: #f2f2f2; /* Dark text on light background */
-    background-color: transparent; /* Inherit the list item's background */
-    border-bottom-color: #1b4a52; /* Dark underline for the active link */
+/* Hover: underline expands, no movement */
+.navbar a:hover::after {
+    transform: translateX(-50%) scaleX(1);
 }
 
-
-/* Separator Lines (the vertical bars) - using :after or a border */
-.navbar li:not(:last-child) {
-    border-right: 1px solid rgba(255, 255, 255, 0.4); /* Light separator line */
-}
-
-/* Hover effect */
+/* Hover text glow */
 .navbar a:hover {
-    /* Example: Darker background on hover for the non-forside links */
-    background-color: #12343a;
-    border-bottom-color: #f2f2f2; /* Light underline on hover */
+    color: #ffffff;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* --- Footer Styling --- */
+/* Section-color hover tints */
+.forside a:hover {
+    color: #1b4a52;
+    text-shadow: 0 0 8px rgba(244, 203, 179, 0.6);
+    background-color: #f4cbb3;
+}
+
+.modtager a:hover {
+    background-color: #526c47;
+}
+
+.frivillig a:hover {
+    background-color: #c94b54;
+}
+
+.restaurant a:hover {
+    background-color: #2a5860;
+}
+
+.doner a:hover {
+    background-color: #707a3a;
+}
+
+.om-os a:hover {
+    background-color: #FFF6F1;
+    color: #1b4a52;
+}
+
+/* Red underline for OM OS only */
+.om-os a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    width: 60%;
+    height: 3px;
+    background: #1b4a52; /* red underline color */
+    transition: transform 0.3s ease;
+}
+
+.om-os a:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+
+
+/* Remove old right-hand separators */
+.navbar li:not(:last-child) {
+    border-right: none;
+}
+
+
+/* ==================================== */
+/* FOOTER STYLING                       */
+/* ==================================== */
 
 .site-footer {
-    background-color: #1b4a52; /* Den mørke baggrundsfarve */
-    color: #f2f2f2; /* Lys tekstfarve */
-    padding: 50px 0 0; /* Større padding i toppen, mindre i bunden */
+    background-color: #1b4a52;
+    color: #f2f2f2;
+    padding: 50px 0 0;
 }
 
 .footer-container {
-    max-width: 1200px; /* Centrerer indholdet som din navbar */
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px 50px; /* Sørger for padding i siderne og bunden */
+    padding: 0 20px 50px;
     display: grid;
-    /* Definerer 4 kolonner, de to midterste er smallere end de yderste */
     grid-template-columns: 2fr 1.5fr 1.5fr 2fr;
-    gap: 40px; /* Mellemrum mellem kolonnerne */
+    gap: 40px;
 }
 
-/* Kolonne Headers */
 .site-footer h3 {
     color: #f2f2f2;
     font-size: 1.25rem;
     margin-bottom: 20px;
-    font-weight: bold; /* Sørger for at overskriften er fed */
+    font-weight: bold;
 }
 
-/* Afsnitstekst */
 .footer-about p,
 .footer-contact p {
     font-size: 0.95rem;
     line-height: 1.6;
-    margin-bottom: 8px; /* Lidt plads mellem kontaktlinjerne */
+    margin-bottom: 8px;
+    color: #d2f1f9;
 }
 
-
-/* Quick Links (Bliv aktiv) */
 .footer-links ul {
     list-style: none;
 }
 
 .footer-links a {
-    color: #f2f2f2;
+    color: #d2f1f9;
     text-decoration: none;
     font-size: 0.95rem;
-    display: block; /* Gør links til blok-elementer for at give dem plads */
+    display: block;
     padding: 4px 0;
     transition: color 0.3s;
 }
 
 .footer-links a:hover {
-    color: #a8a8a8; /* Lidt lysere farve ved hover */
+    color: #e9f8fc;
     text-decoration: underline;
 }
 
-/* Social Media Icons (Følg os) */
 .social-icons {
     display: flex;
-    gap: 15px; /* Mellemrum mellem ikonerne */
+    gap: 15px;
 }
 
 .social-icons a {
     color: #f2f2f2;
-    font-size: 1.7rem; /* Stor størrelse som i billedet */
+    font-size: 1.7rem;
     transition: color 0.3s;
 }
 
@@ -172,7 +234,6 @@ html, body {
     color: #d1d1d1;
 }
 
-/* Kontakt links */
 .footer-contact a {
     color: #f2f2f2;
     text-decoration: none;
@@ -183,54 +244,53 @@ html, body {
     text-decoration: underline;
 }
 
-/* Den mørke bundlinje (under footeren) */
 .footer-bottom-bar {
-    height: 10px; /* Tykkelsen på den mørke stribe */
-    background-color: #222; /* En meget mørk grå/sort farve */
+    height: 10px;
+    background-color: #222;
     width: 100%;
 }
 
-/* Responsivitet for mindre skærme */
+.footer-contact a[href^="mailto:"] {
+    color: #d2f1f9;
+}
+
+.footer-contact a[href^="mailto:"]:hover {
+    color: #e9f8fc;
+}
+
+.footer-contact a[href^="tel:"] {
+    color: #d2f1f9;
+    /*text-decoration: none;*/
+    /*transition: color 0.3s ease;*/
+}
+
+.footer-contact a[href^="tel:"]:hover {
+    color: #e9f8fc;
+}
+
+
+/* Responsive Footer */
 @media (max-width: 768px) {
     .footer-container {
-        /* Skifter til en enkelt kolonne på små skærme */
         grid-template-columns: 1fr;
-        padding: 0 40px 40px; /* Mere padding på siderne for at give luft */
+        padding: 0 40px 40px;
     }
-
     .footer-column {
-        margin-bottom: 30px; /* Plads mellem sektionerne, når de er stablet */
+        margin-bottom: 30px;
     }
-
-
-}
-
-/* Fjern standard spacing på nav-listen */
-.navbar ul {
-    margin: 0;
-    padding: 0;
-}
-
-/* Sørg for at margin ikke kan kollapse udenfor navbaren */
-.navbar {
-    margin: 0;
-    padding: 0;
-    overflow: hidden; /* stopper margin-collapse */
 }
 
 /* ==================================== */
 /* LOGIN PAGE STYLING                   */
 /* ==================================== */
 
-/* Sørger for, at siden fylder hele højden og centrerer indholdet */
 .login-page {
-    background-color: #f7f3ed; /* Lys baggrund for at efterligne 'FORSIDE' sektionen */
+    background-color: #f7f3ed;
     display: flex;
-    flex-direction: column; /* Stak elementer vertikalt */
+    flex-direction: column;
     min-height: 100vh;
 }
 
-/* Simulerer den mørke topbar fra din navigation */
 .login-header-bar {
     background-color: #1b4a52;
     height: 40px;
@@ -238,22 +298,21 @@ html, body {
 }
 
 .login-container {
-    flex-grow: 1; /* Fylder det resterende rum */
+    flex-grow: 1;
     display: flex;
-    justify-content: center; /* Centrer vandret */
-    align-items: center; /* Centrer lodret */
+    justify-content: center;
+    align-items: center;
     padding: 40px 20px;
 }
 
-/* Det centrale Login Kort (Card) */
 .login-card {
-    background-color: #526c47; /* MODTAGER farven som baggrund for kortet */
+    background-color: #526c47;
     color: #f2f2f2;
     padding: 40px;
-    border-radius: 8px; /* Lidt afrundede hjørner */
+    border-radius: 8px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px; /* Begrænser bredden */
+    max-width: 400px;
 }
 
 .card-title {
@@ -268,7 +327,6 @@ html, body {
     opacity: 0.8;
 }
 
-/* Formular elementer */
 .form-group {
     margin-bottom: 20px;
 }
@@ -285,7 +343,7 @@ html, body {
     padding: 12px;
     border: none;
     border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.9); /* Lidt gennemsigtig hvid */
+    background-color: rgba(255, 255, 255, 0.9);
     color: #1b4a52;
     font-size: 1rem;
     transition: background-color 0.3s;
@@ -293,14 +351,13 @@ html, body {
 
 .form-group input:focus {
     background-color: white;
-    outline: 2px solid #c94b54; /* Rød accentfarve ved fokus */
+    outline: 2px solid #c94b54;
 }
 
-/* Login Knap (Button) */
 .login-button {
     width: 100%;
     padding: 15px;
-    background-color: #c94b54; /* FRIVILLIG farven som knap-accent */
+    background-color: #c94b54;
     color: white;
     font-weight: bold;
     font-size: 1.1rem;
@@ -315,20 +372,19 @@ html, body {
     background-color: #a83d46;
 }
 
-/* Links */
 .forgot-password,
 .signup-text a {
-    color: #f4cbb3; /* En lys farve fra dit palette */
+    color: #f4cbb3;
     text-decoration: none;
     font-size: 0.9rem;
-    display: block; /* Giver det plads */
+    display: block;
     margin-bottom: 15px;
     transition: color 0.3s;
 }
 
 .forgot-password {
     text-align: right;
-    margin-top: -10px; /* Justerer positionen */
+    margin-top: -10px;
 }
 
 .signup-text {
@@ -343,13 +399,13 @@ html, body {
     text-decoration: underline;
 }
 
-/* Responsivitet for små skærme */
 @media (max-width: 450px) {
     .login-card {
         padding: 30px 20px;
     }
 }
 
+<<<<<<< HEAD
 /* ==================================== */
 /* MODTAGER SIDE STYLING (Hovedsektion) */
 /* ==================================== */
@@ -524,8 +580,24 @@ html, body {
     .image-column {
         min-height: 300px; /* Gør billedet mindre på mobil */
     }
+=======
+.heroBillede {
+    position: relative;
+    overflow: hidden;
+>>>>>>> javascript-test-1
 }
 
+.hero-darkener {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0); /* starts bright */
+    pointer-events: none;
+    z-index: 2;
+    will-change: background;
+}
 
-
+.heroTekst {
+    position: relative;
+    z-index: 3; /* stays above the darkener */
+}
 

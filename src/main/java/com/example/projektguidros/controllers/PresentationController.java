@@ -13,8 +13,8 @@ public class PresentationController {
     @GetMapping({"/", "/index"})
     public String index(Model model) {
         Presentation presentation = new Presentation(
-                "hej i titlen",
-                "hej igen men som beskrivelse",
+                "FoodBoks",
+                "beskrivelse",
                 //tilføj billede her feks
                 List.of(),
                 null
