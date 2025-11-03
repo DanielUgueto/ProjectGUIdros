@@ -130,7 +130,8 @@ body {
 
 /* Info sektion */
 .info-doner {
-    background-color: #4A8290;
+   /* background-color: #4A8290; */
+    background-color: #2f452d;
     text-align: center;
     padding: 5rem 10%;
 }
