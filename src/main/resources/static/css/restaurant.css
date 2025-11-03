@@ -2,7 +2,8 @@
     background-color: #FFF6F1;
 }
 
-/* midlertidigt: så du kan se boksen, selv hvis billedet ikke loader */
+/* ========================== SEK A - RESTAURANT HERO ========================== */
+
 .rest-hero {
     background: #FFF6F1;
     overflow: hidden;
@@ -53,7 +54,7 @@
     font-weight: 600;
 }
 
-/* ========================== SEKTION B ========================== */
+/* ========================== SEK B - INFO ========================== */
 :root {
     --content-max: 80vw;   /* tekstkolonnebredde, 80% af skærmen */
     --media-max: 60vw;     /* billedets bredde */
@@ -126,7 +127,7 @@
     object-fit: cover;
 }
 
-/* ========================== SEKTION C – REST-2KOLONNE ========================== */
+/* ========================== SEK C – REST-2KOLONNE ========================== */
 
 .rest-2kolonne {
     background: #FFF6F1;
@@ -177,7 +178,7 @@
     align-self: stretch;
 }
 
-/* ========================== SEKTION D – How it works ========================== */
+/* ========================== SEK D – How it works ========================== */
 .how-it-works {
     background-color: #0C4857;
     color: #fff6f1;
@@ -224,7 +225,7 @@
 }
 
 
-/* ========================== SEKTION E – SALAD ========================== */
+/* ========================== SEK E – SALAD ========================== */
 .salad {
     background-color: #FFF6F1;
     display: flex;
@@ -242,7 +243,7 @@
 }
 
 
-/* ========================== SEKTION F – MAP ========================== */
+/* ========================== SEK F – MAP ========================== */
 
 .map-section{
     background:#4A8290;
@@ -263,10 +264,14 @@
 
 /* billede */
 .map-img{
-    width: 30vw;
+    width: 40vw;
+    justify-content:center;
+}
+.map-img img{
+    width:100%;
     height:auto;
     display:block;
-    max-width:none;
+    max-width:none;                /* lad flexbredden bestemme størrelsen */
 }
 
 /* højre kolonne */
@@ -328,7 +333,7 @@
     margin-bottom:0.55vw;
 }
 
-/* ========================== SEKTION G – CITATER ========================== */
+/* ========================== SEK G – CITATER ========================== */
 .rest-citat {
     background: #FFF6F1;
     color: #0C4857;
@@ -343,14 +348,13 @@
     justify-content: center;
     align-items: flex-start;
     gap: 4vw;
-    width: 80vw;
-    max-width: 1400px;
+    width: 90vw;
 }
 
 /* Hver kolonne individuelt */
 .rest-citat-item {
     flex: 1;
-    max-width: 80ch;
+    max-width: 40vw;
     text-align: left;
 }
 
