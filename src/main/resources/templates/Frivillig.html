@@ -6,6 +6,7 @@
     <link rel="icon" th:href="@{/images/favicon3.svg}" type="image/svg">
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <link rel="stylesheet" th:href="@{/css/frivillig.css}">
+
 </head>
 <body>
 
@@ -21,7 +22,7 @@
                 Som frivillig er du med til at skabe et fællesskab, hvor overskud bliver delt i stedet for smidt ud.
                 Hjælp os med at redde mad, støtte mennesker i din by og gøre en reel forskel i hverdagen.
             </p>
-            <a href="#" class="btn">Tilmeld dig som frivillig</a>
+            <a th:href="@{/login}" class="btn">Tilmeld dig som frivillig</a>
         </div>
     </div>
 </section>
@@ -58,7 +59,9 @@
 <section class="cta-frivillig">
     <h2>Klar til at blive frivillig?</h2>
     <p>Bliv en del af FoodBoks-fællesskabet og vær med til at skabe værdi af overskud.</p>
-    <button>Tilmeld dig nu</button>
+    <a th:href="@{/login}">
+        <button>Tilmeld dig nu</button>
+        </a>
 </section>
 
 <footer>

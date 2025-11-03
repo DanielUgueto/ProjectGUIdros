@@ -564,20 +564,39 @@ body {
 }
 
 
-/* Responsivitet for små skærme */
-@media (max-width: 900px) {
-    .content-wrapper {
-        flex-direction: column; /* Stak kolonnerne vertikalt på små skærme */
-    }
+/*!* Responsivitet for små skærme *!*/
+/*@media (max-width: 900px) {*/
+/*    .content-wrapper {*/
+/*        flex-direction: column; !* Stak kolonnerne vertikalt på små skærme *!*/
+/*    }*/
 
-    .text-column {
-        flex: 1;
-        padding-bottom: 20px;
-    }
+/*    .text-column {*/
+/*        flex: 1;*/
+/*        padding-bottom: 20px;*/
+/*    }*/
 
-    .image-column {
-        min-height: 300px; /* Gør billedet mindre på mobil */
-    }
+/*    .image-column {*/
+/*        min-height: 300px; !* Gør billedet mindre på mobil *!*/
+/*    }*/
+
+.heroBillede {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-darkener {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0); /* starts bright */
+    pointer-events: none;
+    z-index: 2;
+    will-change: background;
+}
+
+.heroTekst {
+    position: relative;
+    z-index: 3; /* stays above the darkener */
+}
 
 .heroBillede {
     position: relative;

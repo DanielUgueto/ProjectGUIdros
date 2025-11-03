@@ -21,7 +21,7 @@
                 Din støtte hjælper os med at bekæmpe madspild og give måltider til dem, der har mest brug for det.
                 Sammen kan vi skabe et fællesskab, hvor overskud bliver delt i stedet for smidt ud.
             </p>
-            <a href="#" class="btn">Donér nu</a>
+            <a th:href="@{/login}" class="btn">Donér nu</a>
         </div>
     </div>
 </section>
@@ -60,7 +60,9 @@
 <section class="cta-doner">
     <h2>Klar til at hjælpe?</h2>
     <p>Bliv en del af fællesskabet og hjælp os med at gøre overskud til omsorg.</p>
-    <button>Støt nu</button>
+    <a th:href="@{/login}">
+        <button>Støt nu</button>
+    </a>
 </section>
 
 

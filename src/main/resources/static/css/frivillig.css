@@ -6,7 +6,7 @@
 /* #727a43 light green */
 /* #1c353b hoover blue */
 
-html, body {
+html, .frivillig-body {
     margin: 0;
     padding: 0;
     background-color: #edcdb6;
@@ -17,17 +17,17 @@ html, body {
 }
 
 /* Fix hero section and navbar exact width */
-body, header, .navbar, .hero-frivillig {
+.frivillig-body, header, .navbar, .hero-frivillig {
     width: 100%;
     max-width: 100%;
 }
 
-body {
+.frivillig-body {
     overflow-x: clip;
 }
 
 
-body {
+.frivillig-body {
     font-family: "Poppins", Arial, sans-serif;
     background-color: #ffffff;
     color: #333;
