@@ -16,6 +16,13 @@
         <h1 class="card-title">Log ind på FoodBoks</h1>
         <p class="card-subtitle">Vælg din rolle for at logge ind</p>
 
+        <div class="role-buttons">
+            <button type="button" class="role-btn">Modtager</button>
+            <button type="button" class="role-btn">Frivillig</button>
+            <button type="button" class="role-btn">Restaurant</button>
+            <button type="button" class="role-btn">Organisation</button>
+        </div>
+
         <form action="/login" method="POST" class="login-form">
 
             <div class="form-group">
@@ -37,7 +44,6 @@
         <p class="signup-text">Har du ingen konto? <a href="#">Opret en ny bruger her</a></p>
     </div>
 </div>
-<div th:insert="~{fragments/footer :: site-footer}"></div>
-
+    <div th:insert="~{fragments/footer :: site-footer}"></div>
 </body>
 </html>

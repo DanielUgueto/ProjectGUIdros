@@ -25,9 +25,9 @@ html, body {
     padding: 0;
 }
 
-/* ==================================== */
-/* BASE STYLES AND NAVBAR               */
-/* ==================================== */
+
+/* BASE STYLES OG NAVBAR */
+
 
 body {
     margin: 0;
@@ -35,10 +35,7 @@ body {
     color: #fff;
 }
 
-/* ==================================== */
 /* NAVBAR STYLING — Clean, No Overlap Hover Effect */
-/* ==================================== */
-
 .navbar {
     background-color: #1b4a52;
     margin: 0;
@@ -87,7 +84,7 @@ body {
     transition: color 0.3s ease;
 }
 
-/* New elegant underline animation */
+/* underline animation */
 .navbar a::after {
     content: "";
     position: absolute;
@@ -101,7 +98,7 @@ body {
     transition: transform 0.3s ease;
 }
 
-/* Hover: underline expands, no movement */
+/* Hover: underline expands */
 .navbar a:hover::after {
     transform: translateX(-50%) scaleX(1);
 }
@@ -140,7 +137,7 @@ body {
     color: #1b4a52;
 }
 
-/* Red underline for OM OS only */
+/* underline for OM OS */
 .om-os a::after {
     content: "";
     position: absolute;
@@ -166,10 +163,7 @@ body {
 }
 
 
-/* ==================================== */
-/* FOOTER STYLING                       */
-/* ==================================== */
-
+/* FOOTER STYLING */
 .site-footer {
     background-color: #1b4a52;
     color: #f2f2f2;
@@ -220,17 +214,28 @@ body {
 
 .social-icons {
     display: flex;
-    gap: 15px;
+    flex-wrap: wrap;       /* tillader flere rækker */
+    justify-content: left; /* centrerer ikonerne  */
+    gap: 15px;             /* afstand mellem ikoner */
+    margin-top: 10px;
 }
 
-.social-icons a {
-    color: #f2f2f2;
-    font-size: 1.7rem;
-    transition: color 0.3s;
+.social-icons a img {
+    width: 20px;           /* ikonstørrelse */
+    height: 20px;
+    transition: transform 0.3s, filter 0.3s;
 }
 
-.social-icons a:hover {
-    color: #d1d1d1;
+.social-icons a:hover img {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+/* Tving linjeskift på ikoner */
+@media (max-width: 600px) {
+    .social-icons a {
+        flex: 0 0 30%;     /* max 3 ikoner per række på små skærme */
+    }
 }
 
 .footer-contact a {
@@ -259,8 +264,6 @@ body {
 
 .footer-contact a[href^="tel:"] {
     color: #d2f1f9;
-    /*text-decoration: none;*/
-    /*transition: color 0.3s ease;*/
 }
 
 .footer-contact a[href^="tel:"]:hover {
@@ -279,9 +282,8 @@ body {
     }
 }
 
-/* ==================================== */
-/* LOGIN PAGE STYLING                   */
-/* ==================================== */
+
+/* LOGIN PAGE STYLING */
 
 .login-page {
     background-color: #f7f3ed;
@@ -290,10 +292,43 @@ body {
     min-height: 100vh;
 }
 
+body.login-page {
+    background-image: url('/images/foodboksLangtBillede.jpg');
+    background-size: cover;          /* Fylder hele baggrunden */
+    background-position: left;
+    background-repeat: no-repeat;
+    background-attachment: fixed;    /* Billedet bliver, når der scrolles */
+}
+
 .login-header-bar {
     background-color: #1b4a52;
     height: 40px;
     width: 100%;
+}
+
+/* Container for knapper */
+.role-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;              /* Afstand mellem knapper */
+    margin: 0px 0 25px 0;  /* Afstand over og under containeren */
+    justify-content: left;
+}
+
+/* Selve knapperne */
+.role-btn {
+    background-color: #c94b54;
+    color: white;               /* tekst */
+    border: 10px white;
+    border-radius: 5px;
+    padding: 10px 18px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.role-btn:hover {
+    background-color: #a83d46;
 }
 
 .login-container {
@@ -404,12 +439,9 @@ body {
     }
 }
 
-/* ==================================== */
-/* MODTAGER SIDE STYLING (Hovedsektion) */
-/* ==================================== */
 
+/* MODTAGER SIDE STYLING (Hovedsektion) */
 .modtager-page-content {
-    /* MODTAGER farven fra din navbar: #526c47 */
     background-color: #526c47;
     color: #f2f2f2;
     padding: 0; /* Fjern standard padding */
@@ -421,13 +453,11 @@ body {
     display: flex;
     max-width: 1200px;
     width: 100%;
-    /* Sikrer, at de to kolonner står ved siden af hinanden */
 }
 
 /* Venstre kolonne (Tekst) */
 .text-column {
     padding: 40px 30px;
-    /* Fyld kun den nødvendige plads, eller sæt en fast bredde, f.eks.: */
     flex: 0 0 40%;
 }
 
@@ -442,7 +472,7 @@ body {
     opacity: 0.8;
 }
 
-/* Download knap (lysegrøn fra billedet) */
+/* Download knap */
 .download-button {
     background-color: #c0d8b4; /* Meget lys grøn/creme farve */
     color: #526c47;
@@ -450,9 +480,9 @@ body {
     padding: 10px 20px;
     font-weight: bold;
     font-size: 1rem;
-    border-radius: 4px;
+    border-radius: 20px;
     cursor: pointer;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     transition: background-color 0.3s;
 }
 
@@ -465,36 +495,36 @@ body {
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
-
 .how-it-works ol {
-    list-style: none; /* Fjerner standard tal */
+    list-style: none;
     counter-reset: custom-counter;
-    margin-bottom: 30px;
+    padding-left: 0; /* nulstil padding */
 }
 
 .how-it-works li {
     counter-increment: custom-counter;
-    padding-left: 30px;
-    position: relative;
+    display: flex;          /* gør li til flex container */
+    align-items: flex-start; /* nummeret flugter med tekstens første linje */
+    gap: 10px;              /* afstand mellem tal og tekst */
     line-height: 1.8;
     font-size: 1.1rem;
+    margin-bottom: 15px;    /* afstand mellem punkter */
 }
 
 .how-it-works li::before {
     content: counter(custom-counter);
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 20px;
-    height: 20px;
-    background-color: #f2f2f2; /* Lyse tal i cirkler */
+    background-color: #f2f2f2;
     color: #526c47;
     border-radius: 50%;
-    text-align: center;
-    line-height: 20px;
-    font-size: 0.9rem;
+    width: 25px;
+    height: 25px;
+    display: flex;            /* gør det muligt at centrere tallet */
+    align-items: center;
+    justify-content: center;
     font-weight: bold;
+    flex-shrink: 0;           /* så tallet ikke skaleres */
 }
+
 
 /* Citat Boks */
 .quote-box {
@@ -544,25 +574,35 @@ body {
 
 /* Højre kolonne (Billede) */
 .image-column {
-    flex: 1; /* Fylder den resterende plads */
+    flex: 50 0 0%; /* Fylder den resterende plads */
+    position: relative;
     background-size: cover;
-    background-position: center;
+    background-position: top;
     min-height: 500px; /* Sørg for at billedet er højt nok */
+    max-height: 100%;
+}
+.content-wrapper {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
 }
 
-/* Nederste sektion (skiltet) */
+/* FOODBOKS SEKTION */
 .bottom-section {
     background-color: #f7f3ed; /* Lys, off-white baggrund */
     display: flex;
-    justify-content: center;
+    justify-content: left;
 }
 
 .skilt-box {
-    /* Dette er bare en container til skiltet */
-    /* Justér bredde/højde/margen efter dit faktiske skilt-billede */
     height: 300px;
 }
 
+/* Responsivitet */
+@media (max-width: 900px) {
+    .content-wrapper {
+        flex-direction: column; /* Stak kolonnerne vertikalt på mindre skærme*/
+    }
 
 /*!* Responsivitet for små skærme *!*/
 /*@media (max-width: 900px) {*/
@@ -593,6 +633,9 @@ body {
     will-change: background;
 }
 
+    .text-column, .image-column {
+        flex: 1 1 100%;
+    }
 .heroTekst {
     position: relative;
     z-index: 3; /* stays above the darkener */
@@ -606,7 +649,7 @@ body {
     .hero-darkener {
         position: absolute;
         inset: 0;
-        background: rgba(0, 0, 0, 0); /* starts bright */
+        background: rgba(0, 0, 0, 0);
         pointer-events: none;
         z-index: 2;
         will-change: background;
@@ -614,7 +657,68 @@ body {
 
     .heroTekst {
         position: relative;
-        z-index: 3; /* stays above the darkener */
+        z-index: 3;
     }
 }
 
+/* OVERRIDER FOOTEREN SÅ ALT STÅR SOM DET SKAL */
+.site-footer {
+    display: block;
+    width: 100%;
+    padding: 50px 0 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 50px;
+}
+
+.footer-column {
+    min-width: 0;
+    align-self: start;
+}
+
+.site-footer h3,
+.site-footer ul,
+.site-footer li,
+.site-footer p {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links a {
+    display: block;
+}
+
+/* PLACERER LOOGIN I DEN HVIDE BOKS */
+.om-os .color-block {
+    position: relative;
+    background-color: white; /* Hvid baggrund */
+}
+
+
+/*LOGIN KNAP*/
+.om-os .login-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8rem;
+    color: #1b4a52;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9rem;
+
+    /*OVERSKRIVER STANDARD BLÅ BAGGRUNDSFARVE, SÅ LOG IN KNAPPEN ER TRANSPARENT*/
+    background-color: transparent;
+
+    /* NULSTILLER PADDING*/
+    padding: 0;
+    display: block;
+}
