@@ -34,13 +34,15 @@
 </head>
 
 <body class="restaurant">
-
 <!-- Header -->
 <div th:replace="fragments/header :: site-header"></div>
-
 <main id="restaurant">
 
-    <!-- ================= SECTION A ================= -->
+
+
+
+
+    <!-- ================= SECTION A - HERO ================= -->
     <section class="rest-hero">
         <div class="hero-wrap">
 
@@ -61,7 +63,8 @@
         </div>
     </section>
 
-    <!-- ================= SECTION B ================= -->
+
+    <!-- ================= SECTION B - INFO ================= -->
     <section class="rest-info">
         <div class="rest-info-content">
             <h3>Bæredygtighed starter i køkkenet.</h3>
@@ -87,6 +90,10 @@
     <div class="rest-media">
         <img th:src="@{/images/groentsager.jpg}" alt="Friske grøntsager">
     </div>
+
+
+
+
 
     <!-- ================= SECTION C ================= -->
 
@@ -124,10 +131,14 @@
         </div>
     </section>
 
+
+
     <!-- ================= SECTION E ================= -->
     <section class="salad">
         <img th:src="@{/images/saladPlate.jpg}" alt="Tallerken med salat">
     </section>
+
+
 
 
     <!-- ================= SECTION F ================= -->
@@ -170,6 +181,7 @@
             </div>
         </div>
     </section>
+
 
 
     <!-- ================= SECTION G ================= -->

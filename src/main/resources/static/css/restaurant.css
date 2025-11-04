@@ -2,8 +2,11 @@
     background-color: #FFF6F1;
 }
 
+
+
 /* ========================== SEK A - RESTAURANT HERO ========================== */
 
+/* bagrund til hero sektionen og skjuler overløbende elementer. */
 .rest-hero {
     background: #FFF6F1;
     overflow: hidden;
@@ -12,8 +15,8 @@
 /* Wrapper, der styrer layoutet */
 .hero-wrap {
     display: flex;
-    justify-content: flex-end; /* billedet skal sidde til højre */
-    align-items: center;       /* centrerer lodret */
+    justify-content: flex-end; /* billedet sidder til højre */
+    align-items: center; /* centrerer lodret */
     width: 100%;
     position: relative;
 }
@@ -28,9 +31,9 @@
 
 /* Overlay fylder 80 % af bredden og ligger til venstre */
 .hero-overlay {
-    position: absolute;
+    position: absolute; /* ovenpå billedet, relative */
     top: 50%;
-    left: 0;
+    left: 0; /* starter helt til venstre */
     transform: translateY(-50%);
     width: 80%;
     height: auto;
@@ -40,7 +43,7 @@
     box-sizing: border-box;
 }
 
-/* Tekststil */
+/* Stil til hero overskriften*/
 .hero-title {
     margin: 0;
     line-height: 0.95;
@@ -49,19 +52,19 @@
     font-weight: 300;
 }
 
-/* bæredygtighed er bold */
+/* bæredygtighed er med bold */
 .hero-title--em {
     font-weight: 600;
 }
 
 /* ========================== SEK B - INFO ========================== */
 :root {
-    --content-max: 80vw;   /* tekstkolonnebredde, 80% af skærmen */
-    --media-max: 60vw;     /* billedets bredde */
-    --overlap: 12vw;       /* hvor meget billedet går op i den blå sektion */
+    --content-max: 80vw; /* tekstkolonnebredde, 80% af skærme*/
+    --media-max: 60vw; /* billedets bredde */
+    --overlap: 12vw; /* hvor meget billedet går op i den blå sektion */
 }
 
-/* Blå sektion */
+/* Mørk blå sektion */
 .rest-info {
     background-color: #0C4857;
     color: #FFF6F1;
@@ -69,7 +72,7 @@
     justify-content: center;
     padding: 4.5vw 5vw calc(var(--overlap) + 5vw);
     position: relative;
-    z-index: 1;
+    z-index: 1; /* vigtigt så det kan ligge under billedet */
 }
 
 /* Tekstcontainer */
@@ -93,12 +96,13 @@
     max-width: 80ch;
 }
 
-/* Knap */
+/* Container til knap */
 .rest-btn-svg {
     margin-top: 2.5vw;
     text-align: center;
 }
 
+/* styling af knappen*/
 .rest-btn-svg img {
     width: 30vw;
     height: auto;
@@ -107,7 +111,7 @@
     transition: transform 0.15s ease, filter 0.15s ease;
 }
 
-/* Hovereffekt på SVG knappen*/
+/* Hovereffekt på knappen*/
 .rest-btn-svg img:hover {
     transform: translateY(-2px) scale(1.03);
     filter: brightness(1.04);
@@ -118,7 +122,7 @@
     width: var(--media-max);
     margin: calc(-1 * var(--overlap)) auto 0;
     position: relative;
-    z-index: 2;
+    z-index: 2; /*øverst*/
 }
 .rest-media img {
     width: 100%;
@@ -126,6 +130,11 @@
     display: block;
     object-fit: cover;
 }
+
+
+
+
+
 
 /* ========================== SEK C – REST-2KOLONNE ========================== */
 
